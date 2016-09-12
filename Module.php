@@ -1,6 +1,6 @@
 <?php
 
-namespace humhub\modules\breakingnews;
+namespace humhub\modules\devtools;
 
 use Yii;
 use yii\helpers\Url;
