@@ -1,0 +1,10 @@
+{
+    "id": "devtools",
+    "name": "HumHub Developer Tools",
+    "description": "",
+    "keywords": ["gii", "tools", "development"],
+    "version": "0.1",
+    "humhub": {
+        "minVersion": "1.0"
+    }
+}
