@@ -62,9 +62,9 @@ return [
 
             'generators' => [
                 'module' => [
-                    'class' => 'humhub\generators\module\Generator',
+                    'class' => 'humhub\modules\devtools\Generator',
                     'templates' => [
-                        'humhub' => '@humhub/generators/module/default',
+                        'humhub' => '@app/modules/devtools/default',
                     ]
                 ]
             ],
