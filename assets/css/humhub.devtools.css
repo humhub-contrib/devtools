@@ -1,0 +1,65 @@
+.devpanel-head {
+    background:#34302D;
+    border-radius: 4px 4px 0px 0px;
+    cursor:pointer;
+}
+
+.devpanel-head i {
+    margin-right:7px;
+}
+
+.devpanel-head h1 {
+    color:white !important;
+    font-weight: bold !important;
+    padding:10px;
+    margin:0px;
+}
+
+.devpanel-body {
+    background-color: #F1F1F1;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.devpanel-body .row {
+    margin: 0px;
+}
+.devpanel-body a {
+    color: #61C2D0;
+    font-weight:bold;
+}
+.devpanel-body p {
+    margin:5px 0px 0px 0px;
+}
+.devpanel-body > div {
+    border-radius:4px;
+    padding:5px;
+}
+
+.devpanel-body .sk-spinner div {
+    padding: 0px;
+}
+
+.devpanel-body div.section {
+    min-height: 70px;
+    cursor:pointer;
+}
+
+.devpanel-body div.section:hover {
+    background-color:#E8E8E8;
+}
+
+.showcase .tab-sub-menu {
+    margin-bottom: 0px !important;
+}
+
+.showcase-page .panel-body.tab {
+    background-color: #fff !important;
+}
+
+.doc_nav {
+    margin: 10px;
+}
+
+.doc_nav a {
+    color: #61C2D0;
+}
