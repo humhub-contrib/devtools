@@ -5,6 +5,6 @@
     "keywords": ["gii", "tools", "development"],
     "version": "0.2",
     "humhub": {
-        "minVersion": "1.2"
+        "minVersion": "1.2.2"
     }
 }
