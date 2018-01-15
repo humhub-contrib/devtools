@@ -2,6 +2,9 @@
 
 namespace humhub\modules\devtools\controllers;
 
+use humhub\modules\devtools\models\forms\RichtextModel;
+use humhub\widgets\ModalDialog;
+use humhub\widgets\RichText;
 use Yii;
 
 /**
@@ -47,14 +50,13 @@ class ShowcaseController extends \humhub\components\Controller
         $model = new \humhub\modules\devtools\models\forms\UserpickerForm();
         
         if ($model->load(Yii::$app->request->post())) {
-            return \humhub\widgets\ModalDialog::widget([
+            return ModalDialog::widget([
                     'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Userpicker</strong> guid selection'),
                     'body' => $model->getSelectionString(),
                     'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
             ]);
         }
     }
-
 }
 
 ?>

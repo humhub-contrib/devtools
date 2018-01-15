@@ -27,10 +27,7 @@ return [
             'allowedIPs' => ['127.0.0.1', '::1'],
             'generators' => [
                 'module' => [
-                    'class' => 'humhub\modules\devtools\Generator',
-                    'templates' => [
-                        'humhub' => '@app/modules/devtools/default',
-                    ]
+                    'class' => 'humhub\modules\devtools\gii\generators\ModuleGenerator',
                 ]
             ],
         ],

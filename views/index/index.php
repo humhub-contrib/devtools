@@ -1,9 +1,11 @@
 <?php
 
 use humhub\modules\devtools\widgets\PanelRow;
+use humhub\widgets\Button;
 use yii\helpers\Url;
 
 \humhub\modules\devtools\assets\DevtoolsAsset::register($this);
+
 ?>
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -13,6 +15,13 @@ use yii\helpers\Url;
         <p>
             Welcome to the HumHub DevTools, the following showcases describe the use of some build in HumHub components.
         </p>
+
+        <?php print_r(Yii::$app->hasModule('gii')) ?>
+
+        <?php if(Yii::$app->getModule('gii')) : ?>
+            <?= Button::defaultType(Yii::t('DevtoolsModule.base', 'Module Generator'))->icon('fa-rocket') ?>
+        <?php endif; ?>
+
         <br />
         <div class="devpanel-head">
             <h1><i class="fa fa-chevron-circle-down"></i>Showcases</h1>
@@ -55,6 +64,14 @@ use yii\helpers\Url;
                     ['title' => Yii::t('DevtoolsModule.views_index_index', 'Actions'), 'url' => Url::to(['/devtools/showcase/actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript action api.')],
                     ['title' => Yii::t('DevtoolsModule.views_index_index', 'Components'), 'url' => Url::to(['/devtools/showcase/events']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom ui components.')]
                 ]
+            ]);
+            ?>
+
+            <?=
+            PanelRow::widget([
+                'items' => [
+                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Richtext'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'richtext']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Richtext widget and plugin system.')],
+                   ]
             ]);
             ?>
 

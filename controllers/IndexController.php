@@ -13,7 +13,7 @@ use Yii;
 class IndexController extends \humhub\components\Controller
 {
     
-    public $subLayout = "@humhub/modules/devtools/views/index/_layout";
+    public $subLayout = "@devtools/views/index/_layout";
 
     /**
      * Configuration Action for Super Admins

@@ -6,6 +6,9 @@ class CodeView extends \yii\base\Widget
 {
 
     public $type = '';
+
+    const PHP_START = '<?php';
+    const PHP_START_ECHO = '<?=';
     
     public function init()
     {
