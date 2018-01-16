@@ -1,6 +1,6 @@
 <?php
 
-namespace jharrer\humhub\modules\demo\controllers;
+namespace david\humhub\modules\demo\controllers;
 
 use humhub\components\Controller;
 

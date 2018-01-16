@@ -1,8 +1,8 @@
 <?php
 
-namespace jharrer\humhub\modules\example\controllers
+namespace jharrer\humhub\modules\example\controllers;
 
-use humhub\modules\admin\components\Controller
+use humhub\modules\admin\components\Controller;
 
 class AdminController extends Controller
 {

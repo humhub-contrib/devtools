@@ -1,9 +1,13 @@
 <?php
 
-namespace jharrer\humhub\modules\example\controllers
+namespace jharrer\humhub\modules\example\controllers;
 
-class IndexController extends \yii\web\Controller
+use humhub\components\Controller;
+
+class IndexController extends Controller
 {
+
+    public $subLayout = "@example/views/layouts/default";
 
     /**
      * Renders the index view for the module

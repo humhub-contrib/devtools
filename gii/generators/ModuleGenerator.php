@@ -203,13 +203,25 @@ class ModuleGenerator extends \yii\gii\Generator
             $this->render('views/layouts/default.php')
         );
 
+        $files[] = new CodeFile(
+            $this->getOutputPath('assets/Assets.php'),
+            $this->render('assets/Assets.php')
+        );
+
+        $files[] = new CodeFile(
+            $this->getOutputPath('resources/js/humhub.'. $this->moduleID .'.js'),
+            $this->render('resources/js/demo.js.php')
+        );
+
         return $files;
     }
 
-    public function translate($text, $view = false)
+    public function translate($text, $view = false, $paramsStr = null)
     {
         $result = ($view) ? '<?= ' : '';
-        $result .= 'Yii::t("'.ucfirst($this->moduleID).'Module.base", "'.$text.'");';
+        $result .= 'Yii::t("'.ucfirst($this->moduleID).'Module.base", "'.$text.'"';
+        $result .= ($paramsStr) ? ', '.$paramsStr : '';
+        $result .= ')';
         return $view ? $result . ' ?>' : $result;
     }
 

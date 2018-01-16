@@ -18,13 +18,7 @@ use yii\web\View;
 
 class GiiAsset extends AssetBundle
 {
-    public function init()
-    {
-        $this->sourcePath = dirname(dirname(__FILE__)) . '/resources';
-        parent::init();
-    }
-
-    public $sourcePath = '@devtools/resource';
+    public $sourcePath = '@devtools/resources';
 
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 

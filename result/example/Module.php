@@ -3,9 +3,18 @@
 namespace jharrer\humhub\modules\example;
 
 use Yii; 
+use yii\helpers\Url; 
 
 class Module extends \humhub\components\Module
 {
+
+    /**
+    * @inheritdoc
+    */
+    public function getConfigUrl()
+    {
+        return Url::to(['/example/admin']);
+    }
 
     /**
     * @inheritdoc
