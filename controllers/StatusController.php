@@ -23,6 +23,13 @@ use yii\helpers\Url;
 
 class StatusController extends Controller
 {
+    public function getAccessRules()
+    {
+        return [
+            ['admin']
+        ];
+    }
+
     const TYPE_SUCCESS = 'success';
     const TYPE_WARNING = 'warning';
     const TYPE_ERROR = 'error';

@@ -11,7 +11,7 @@ humhub.module('devtools', function (module, require, $) {
             }
         });
 
-        $('.section').on('click', function () {
+        $('.section:not(.disabled)').on('click', function () {
             $(this).find('a')[0].click();
         });
 

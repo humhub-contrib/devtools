@@ -13,7 +13,6 @@ class ShowcasePage extends \yii\base\Widget
                     'showcases' => $this->items
         ]);
     }
-
 }
 
 ?>

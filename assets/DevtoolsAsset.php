@@ -13,13 +13,11 @@ use yii\web\AssetBundle;
 class DevtoolsAsset extends AssetBundle
 {
 
+    public $publishOptions = [
+        'forceCopy' => true
+    ];
+    public $sourcePath = '@devtools/resources';
     public $jsOptions = ['position' => \yii\web\View::POS_END];
     public $css = ['css/humhub.devtools.css'];
     public $js = ['js/humhub.devtools.js'];
-    
-    public function init()
-    {
-        $this->sourcePath = dirname(__FILE__);
-        parent::init();
-    }
 }

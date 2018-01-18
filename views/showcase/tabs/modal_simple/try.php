@@ -44,6 +44,7 @@
     $('#simple-modal-open').on('click', function (evt) {
         evt.preventDefault();
 
+        debugger;
         humhub.modules.ui.modal.get('simpleModal', {
             'header': $('#simple-modal-header').val(),
             'body': $('#simple-modal-body').val(),

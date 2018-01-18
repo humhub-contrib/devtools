@@ -1,15 +1,18 @@
 <?php
-$showcases = [
-    [
-        'id' => 'modal_simple',
-        'title' => Yii::t('DevtoolsModule.views_showcase_modal', 'Simple Modal'),
-        'description' => Yii::t('DevtoolsModule.views_showcase_modal', 'Create a simple Modal by using the <code>humhub.modules.ui.modal</code> Javascript Module.'),
-        'tabs' => [
-            ['id' => 'try', 'active' => true, 'title' => Yii::t('DevtoolsModule.base', 'Try')],
-            ['id' => 'php', 'title' => Yii::t('DevtoolsModule.base', 'PHP')],
-            ['id' => 'js', 'title' => Yii::t('DevtoolsModule.base', 'JS')],
-        ]
-    ],
+
+// There was a bug prior to 1.3
+$showcases =  (version_compare(Yii::$app->version, '1.3', '<')) ? [] : [
+    'id' => 'modal_simple',
+    'title' => Yii::t('DevtoolsModule.views_showcase_modal', 'Simple Modal'),
+    'description' => Yii::t('DevtoolsModule.views_showcase_modal', 'Create a simple Modal by using the <code>humhub.modules.ui.modal</code> Javascript Module.'),
+    'tabs' => [
+        ['id' => 'try', 'active' => true, 'title' => Yii::t('DevtoolsModule.base', 'Try')],
+        ['id' => 'php', 'title' => Yii::t('DevtoolsModule.base', 'PHP')],
+        ['id' => 'js', 'title' => Yii::t('DevtoolsModule.base', 'JS')],
+    ]
+];
+
+$showcases = array_merge($showcases, [
     [
         'id' => 'modal_simple_remote',
         'title' => Yii::t('DevtoolsModule.views_showcase_modal', 'Simple Remote Modal'),
@@ -50,6 +53,6 @@ $showcases = [
             ['id' => 'js', 'title' => Yii::t('DevtoolsModule.base', 'JS')],
         ]
     ]
-];
+]);
 ?>
 <?= \humhub\modules\devtools\widgets\ShowcasePage::widget(['items' => $showcases])?>

@@ -14,7 +14,6 @@ use humhub\assets\Select2Asset;
 use yii\bootstrap\BootstrapAsset;
 use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
-use yii\web\View;
 
 class GiiAsset extends AssetBundle
 {
@@ -23,7 +22,7 @@ class GiiAsset extends AssetBundle
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 
     public $css = [
-        'select2.css'
+        'css/select2.css'
     ];
 
     public $depends = [BootstrapAsset::class, JqueryAsset::class, Select2Asset::class, FontAwesomeAsset::class];

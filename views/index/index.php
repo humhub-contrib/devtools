@@ -13,16 +13,16 @@ use yii\helpers\Url;
     </div>
     <div class="panel-body">
         <p>
-            Welcome to the HumHub DevTools, the following showcases describe the use of some build in HumHub components.
+            <?= Yii::t('DevtoolsModule.base', 'Welcome to the HumHub DevTools, the following showcases describe the use of some build in HumHub components.'); ?>
         </p>
 
-        <?php print_r(Yii::$app->hasModule('gii')) ?>
-
         <?php if(Yii::$app->getModule('gii')) : ?>
-            <?= Button::defaultType(Yii::t('DevtoolsModule.base', 'Module Generator'))->icon('fa-rocket') ?>
+            <div class="clearfix">
+                <?= Button::defaultType(Yii::t('DevtoolsModule.base', 'Module Generator'))->link(['/gii'], false)->icon('fa-rocket')->right() ?>
+            </div>
+            <br />
         <?php endif; ?>
 
-        <br />
         <div class="devpanel-head">
             <h1><i class="fa fa-chevron-circle-down"></i>Showcases</h1>
         </div>
@@ -41,8 +41,8 @@ use yii\helpers\Url;
             PanelRow::widget([
                 'items' => [
                     ['title' => Yii::t('DevtoolsModule.views_index_index', 'Userpicker'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'userpicker']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use a user picker field.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Spacepicker'), 'url' => Url::to(['/devtools/showcase/actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use a space picker field.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Custom Picker'), 'url' => Url::to(['/devtools/showcase/events']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create your own picker field.')]
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Spacepicker'), 'url' => Url::to(['/devtools/showcase/actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use a space picker field.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Custom Picker'), 'url' => Url::to(['/devtools/showcase/events']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create your own picker field.')]
                 ]
             ]);
             ?>
@@ -50,9 +50,9 @@ use yii\helpers\Url;
             <?=
             PanelRow::widget([
                 'items' => [
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Client'), 'url' => Url::to(['/devtools/showcase/client']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the ajax client module to submit forms or request other data.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Upload'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'upload']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom ui components.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Actions'), 'url' => Url::to(['/devtools/showcase/actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript action api.')]
+                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Client'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'client']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the ajax client module to submit forms or request other data.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Upload'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'upload']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom ui components.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Actions'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript action api.')]
                 ]
             ]);
             ?>
@@ -60,9 +60,9 @@ use yii\helpers\Url;
             <?=
             PanelRow::widget([
                 'items' => [
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Client'), 'url' => Url::to(['/devtools/showcase/client']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the ajax client module to submit forms or request other data.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Actions'), 'url' => Url::to(['/devtools/showcase/actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript action api.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Components'), 'url' => Url::to(['/devtools/showcase/events']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom ui components.')]
+                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Forms'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'forms']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to submit form data.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Widgets'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'widgets']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how implement ui widgets.')],
+                    ['disabled' => version_compare(Yii::$app->version, '1.3', '<') ? true : false, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Richtext'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'richtext']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Richtext widget and plugin system.')],
                 ]
             ]);
             ?>
@@ -70,17 +70,9 @@ use yii\helpers\Url;
             <?=
             PanelRow::widget([
                 'items' => [
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Richtext'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'richtext']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Richtext widget and plugin system.')],
-                   ]
-            ]);
-            ?>
-
-            <?=
-            PanelRow::widget([
-                'items' => [
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Config'), 'url' => Url::to(['/devtools/showcase/config']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript configuration to transfer data from php to your Javascript modules.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Text'), 'url' => Url::to(['/devtools/showcase/text']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Lean how to use the text utility to transfer translated text to your Javascript modules.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Log'), 'url' => Url::to(['/devtools/showcase/log']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript log module.')]
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Config'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'config']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript configuration to transfer data from php to your Javascript modules.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Text'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'text']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Lean how to use the text utility to transfer translated text to your Javascript modules.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Log'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'log']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript log module.')]
                 ]
             ]);
             ?>
@@ -89,15 +81,15 @@ use yii\helpers\Url;
         <br />
 
         <div class="devpanel-head">
-            <h1><i class="fa fa-chevron-circle-down"></i>Tutorials</h1>
+            <h1><i class="fa fa-chevron-circle-down"></i><?= Yii::t('DevtoolsModule.views_index_index', 'Tutorials') ?></h1>
         </div>
         <div class="devpanel-body">
             <?=
             PanelRow::widget([
                 'items' => [
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'My first Module'), 'url' => Url::to(['/devtools/tutorial/first']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Create your first HumHub module.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Build a Question Module'), 'url' => Url::to(['/devtools/tutorial/question']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create a question module with own stream entries and permissions.')],
-                    ['title' => Yii::t('DevtoolsModule.views_index_index', 'Question Module Migration'), 'url' => Url::to(['/devtools/tutorial/migration']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to extend an existing module by means of migrations.')]
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'My first Module'), 'url' => Url::to(['/devtools/tutorial/first']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Create your first HumHub module.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Build a Question Module'), 'url' => Url::to(['/devtools/tutorial/question']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create a question module with own stream entries and permissions.')],
+                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Question Module Migration'), 'url' => Url::to(['/devtools/tutorial/migration']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to extend an existing module by means of migrations.')]
                 ]
             ]);
             ?>

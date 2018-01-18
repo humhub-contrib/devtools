@@ -8,7 +8,6 @@
 
 namespace humhub\modules\devtools\models\forms;
 
-
 use yii\base\Model;
 
 class RichtextModel extends Model

@@ -15,6 +15,12 @@ use Yii;
  */
 class ShowcaseController extends \humhub\components\Controller
 {
+    public function getAccessRules()
+    {
+        return [
+            ['admin']
+        ];
+    }
 
     public $subLayout = "@humhub/modules/devtools/views/index/_layout";
 

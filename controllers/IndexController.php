@@ -12,6 +12,12 @@ use Yii;
  */
 class IndexController extends \humhub\components\Controller
 {
+    public function getAccessRules()
+    {
+        return [
+            ['admin']
+        ];
+    }
     
     public $subLayout = "@devtools/views/index/_layout";
 

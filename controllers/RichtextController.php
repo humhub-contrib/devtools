@@ -22,6 +22,12 @@ use Yii;
  */
 class RichtextController extends Controller
 {
+    public function getAccessRules()
+    {
+        return [
+            ['admin']
+        ];
+    }
 
     public $subLayout = "@humhub/modules/devtools/views/index/_layout";
 

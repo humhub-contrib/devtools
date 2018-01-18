@@ -17,6 +17,27 @@ The module generator extends Gii, a code generation tool for the Yii framework. 
 
 #### Web
 Add the following to your web configuration (/protected/config/web.php) to enable the generator on the Gii web UI.
+
+##### HumHub Only
+
+```php
+return [
+    // ...
+    'modules' => [
+        // ...
+        'gii' => [
+            'class' => 'humhub\modules\devtools\gii\Module',
+            'allowedIPs' => ['127.0.0.1', '::1'],
+        ],
+        // ...
+    ]
+];
+```
+
+##### Yii Compatibility
+
+> Info: In order to use Yii default generators alongside HumHub Generators, add the following configuration instead.
+
 ```php
 return [
     // ...
@@ -35,6 +56,7 @@ return [
     ]
 ];
 ```
+
 You can then access Gii through the following URL:
 ```
 http://localhost/path/to/index.php?r=gii

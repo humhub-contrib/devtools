@@ -44,8 +44,12 @@
     cursor:pointer;
 }
 
-.devpanel-body div.section:hover {
+.devpanel-body div.section:not(.disabled):hover {
     background-color:#E8E8E8;
+}
+
+.devpanel-body div.section.disabled a {
+    color: #e0e0e0;
 }
 
 .showcase .tab-sub-menu {
