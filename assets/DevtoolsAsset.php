@@ -14,7 +14,7 @@ class DevtoolsAsset extends AssetBundle
 {
 
     public $publishOptions = [
-        'forceCopy' => true
+        'forceCopy' => false
     ];
     public $sourcePath = '@devtools/resources';
     public $jsOptions = ['position' => \yii\web\View::POS_END];
