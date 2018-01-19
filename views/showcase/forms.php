@@ -13,7 +13,7 @@ $showcases = [
         'description' => Yii::t('DevtoolsModule.views_showcase_forms', 'Learn how to submit data and load the posted data into your model.'),
         'tabs' => [
             ['id' => 'try', 'active' => true, 'title' => Yii::t('DevtoolsModule.base', 'Try')],
-            ['id' => 'View', 'title' => Yii::t('DevtoolsModule.base', 'View')],
+            ['id' => 'view', 'title' => Yii::t('DevtoolsModule.base', 'View')],
             ['id' => 'php', 'title' => Yii::t('DevtoolsModule.base', 'PHP')],
         ]
     ],

@@ -13,7 +13,7 @@ $showcases = [
         'description' => Yii::t('DevtoolsModule.views_showcase_client', 'Learn how to use the `client` module to receive content per javascript.'),
         'tabs' => [
             ['id' => 'try', 'active' => true, 'title' => Yii::t('DevtoolsModule.base', 'Try')],
-            ['id' => 'View', 'title' => Yii::t('DevtoolsModule.base', 'View')],
+            ['id' => 'view', 'title' => Yii::t('DevtoolsModule.base', 'View')],
             ['id' => 'php', 'title' => Yii::t('DevtoolsModule.base', 'PHP')],
         ]
     ],
