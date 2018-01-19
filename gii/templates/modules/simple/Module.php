@@ -14,12 +14,12 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     public function getContentContainerTypes()
     {
         return [
-    <?php if($generator->isSpaceModule) : ?>
+<?php if($generator->isSpaceModule) : ?>
             Space::class,
-    <?php endif; ?>
-    <?php if($generator->isUserModule) : ?>
-            User::class,
-    <?php endif; ?>
+<?php endif; ?>
+<?php if($generator->isUserModule) : ?>
+            User::class
+<?php endif; ?>
         ];
     }
 <?php endif; ?>
@@ -47,8 +47,8 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     */
     public function disableContentContainer(ContentContainerActiveRecord $container)
     {
-    // Clean up space related data, don't remove the parent::disable()!!!
-    parent::disable();
+        // Clean up space related data, don't remove the parent::disable()!!!
+        parent::disable();
     }
 
     /**
@@ -56,7 +56,7 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     */
     public function getContentContainerName(ContentContainerActiveRecord $container)
     {
-        return <?= $generator->translate($generator->contentContainerName)."\n" ?>
+        return <?= $generator->translate($generator->contentContainerName)."\n" ?>;
     }
 
     /**
@@ -64,7 +64,7 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     */
     public function getContentContainerDescription(ContentContainerActiveRecord $container)
     {
-        return <?= $generator->translate($generator->contentContainerDescription)."\n"?>
+        return <?= $generator->translate($generator->contentContainerDescription)."\n"?>;
     }
 <?php endif; ?>
 }
