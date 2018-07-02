@@ -5,7 +5,7 @@ namespace  <?= $generator->getClassNamespace(); ?>;
 use Yii;
 use yii\helpers\Url;
 
-class Events extends \yii\base\Object
+class Events
 {
 
     /**

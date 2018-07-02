@@ -9,9 +9,9 @@
 namespace humhub\modules\devtools\gii\generators;
 
 
-use yii\base\Object;
+use yii\base\Component;
 
-class ModuleClassHelper extends Object
+class ModuleClassHelper extends Component
 {
     /**
      * @var ModuleGenerator
