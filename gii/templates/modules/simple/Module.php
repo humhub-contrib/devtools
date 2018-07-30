@@ -3,11 +3,11 @@
 namespace <?= $generator->getClassNamespace(); ?>;
 
 <?php foreach($generator->moduleClass->getIncludes() as $ns) :?>
-use <?= $ns ?>; <?= "\r\n" ?>
+use <?= $ns ?>;<?= "\r\n" ?>
 <?php endforeach; ?>
 
 class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?>{
-<?php if($generator->isContentContainerModule()) : ?>
+<?php if($generator->isContentContainerModule()): ?>
     /**
     * @inheritdoc
     */
@@ -22,8 +22,8 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
 <?php endif; ?>
         ];
     }
-<?php endif; ?>
 
+<?php endif; ?>
     /**
     * @inheritdoc
     */
@@ -40,8 +40,8 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
         // Cleanup all module data, don't remove the parent::disable()!!!
         parent::disable();
     }
-
 <?php if($generator->isContentContainerModule()) : ?>
+
     /**
     * @inheritdoc
     */
@@ -56,7 +56,7 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     */
     public function getContentContainerName(ContentContainerActiveRecord $container)
     {
-        return <?= $generator->translate($generator->contentContainerName)."\n" ?>;
+        return <?= $generator->translate($generator->contentContainerName) ?>;
     }
 
     /**
@@ -64,11 +64,7 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     */
     public function getContentContainerDescription(ContentContainerActiveRecord $container)
     {
-        return <?= $generator->translate($generator->contentContainerDescription)."\n"?>;
+        return <?= $generator->translate($generator->contentContainerDescription) ?>;
     }
 <?php endif; ?>
 }
-
-
-
-
