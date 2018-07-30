@@ -3,18 +3,9 @@
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
- *
- */
-
-/**
- * Created by PhpStorm.
- * User: buddha
- * Date: 29.08.2017
- * Time: 22:40
  */
 
 namespace humhub\modules\devtools\controllers;
-
 
 use humhub\widgets\ModalClose;
 use Yii;
@@ -37,7 +28,7 @@ class StatusController extends Controller
 
     public function actionIndex($type)
     {
-        switch($type) {
+        switch ($type) {
             case self::TYPE_SUCCESS:
                 $this->view->success(Yii::t('DevtoolsModule.views_showcase_status', 'Success'));
                 break;
@@ -57,7 +48,7 @@ class StatusController extends Controller
 
     public function actionModal($type = null)
     {
-        switch($type) {
+        switch ($type) {
             case self::TYPE_SUCCESS:
                 return ModalClose::widget(['success' => Yii::t('DevtoolsModule.views_showcase_status', 'Success')]);
                 break;

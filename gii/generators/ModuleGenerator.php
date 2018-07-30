@@ -35,7 +35,8 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public $moduleClass;
 
-    public function init() {
+    public function init()
+    {
         $this->templates['simple'] = $this->defaultTemplate();
         $this->moduleClass = new ModuleClassHelper(['root' => $this]);
     }
@@ -66,7 +67,7 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public function getDescription()
     {
-        return Yii::t('DevtoolsModule.generators_ModuleGenerator','This generator helps you to generate the skeleton code needed by a HumHub module.');
+        return Yii::t('DevtoolsModule.generators_ModuleGenerator', 'This generator helps you to generate the skeleton code needed by a HumHub module.');
     }
 
     /**
@@ -119,8 +120,8 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public function successMessage()
     {
-        $output = "<p>".Yii::t('DevtoolsModule.generators_ModuleGenerator', "The module has been generated successfully.")."</p>";
-        $output .= "<p>".Yii::t('DevtoolsModule.generators_ModuleGenerator', 'To access the module, you must enable it via the <a href="{url}">module admin panel</a>', ['url' => Url::to(["/admin/module"])])."</p>";
+        $output = '<p>' . Yii::t('DevtoolsModule.generators_ModuleGenerator', 'The module has been generated successfully.') . '</p>';
+        $output .= '<p>' . Yii::t('DevtoolsModule.generators_ModuleGenerator', 'To access the module, you must enable it via the <a href="{url}">module admin panel</a>', ['url' => Url::to(['/admin/module'])]) . '</p>';
         return $output;
     }
 
@@ -159,43 +160,43 @@ class ModuleGenerator extends \yii\gii\Generator
         $files = [];
 
         $files[] = new CodeFile(
-            $this->getOutputPath("config.php"),
-            $this->render("config.php")
+            $this->getOutputPath('config.php'),
+            $this->render('config.php')
         );
 
         $files[] = new CodeFile(
-            $this->getOutputPath("module.json"),
-            $this->render("module.json.php")
+            $this->getOutputPath('module.json'),
+            $this->render('module.json.php')
         );
 
         $files[] = new CodeFile(
-            $this->getOutputPath("Module.php"),
-            $this->render("Module.php")
+            $this->getOutputPath('Module.php'),
+            $this->render('Module.php')
         );
 
         $files[] = new CodeFile(
-            $this->getOutputPath("Events.php"),
-            $this->render("Events.php")
+            $this->getOutputPath('Events.php'),
+            $this->render('Events.php')
         );
 
         $files[] = new CodeFile(
-            $this->getOutputPath("controllers/AdminController.php"),
-            $this->render("controllers/AdminController.php")
+            $this->getOutputPath('controllers/AdminController.php'),
+            $this->render('controllers/AdminController.php')
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('controllers/IndexController.php'),
-            $this->render("controllers/IndexController.php")
+            $this->render('controllers/IndexController.php')
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('views/admin/index.php'),
-            $this->render("views/admin/index.php")
+            $this->render('views/admin/index.php')
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('views/index/index.php'),
-            $this->render("views/index/index.php")
+            $this->render('views/index/index.php')
         );
 
         $files[] = new CodeFile(
@@ -209,7 +210,7 @@ class ModuleGenerator extends \yii\gii\Generator
         );
 
         $files[] = new CodeFile(
-            $this->getOutputPath('resources/js/humhub.'. $this->moduleID .'.js'),
+            $this->getOutputPath('resources/js/humhub.' . $this->moduleID . '.js'),
             $this->render('resources/js/demo.js.php')
         );
 
@@ -219,8 +220,8 @@ class ModuleGenerator extends \yii\gii\Generator
     public function translate($text, $view = false, $paramsStr = null)
     {
         $result = ($view) ? '<?= ' : '';
-        $result .= 'Yii::t("'.ucfirst($this->moduleID).'Module.base", "'.$text.'"';
-        $result .= ($paramsStr) ? ', '.$paramsStr : '';
+        $result .= 'Yii::t(\'' . ucfirst($this->moduleID) . 'Module.base\', \'' . $text . '\'';
+        $result .= ($paramsStr) ? ', ' . $paramsStr : '';
         $result .= ')';
         return $view ? $result . ' ?>' : $result;
     }
@@ -230,7 +231,7 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public function getOutputPath($file = '')
     {
-        return Yii::getAlias($this->outputPath.'/'.$this->moduleID.'/'.$file);
+        return Yii::getAlias($this->outputPath . '/' . $this->moduleID . '/' . $file);
     }
 
     /**
@@ -239,7 +240,7 @@ class ModuleGenerator extends \yii\gii\Generator
     public function getClassNamespace($suffix = null)
     {
         $namespace = $this->namespace . 'humhub\\modules\\' . $this->moduleID;
-        return  ($suffix) ? $namespace .  '\\' .$suffix : $namespace;
+        return ($suffix) ? $namespace . '\\' . $suffix : $namespace;
     }
 
     public function isContentContainerModule()

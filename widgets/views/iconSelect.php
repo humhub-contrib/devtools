@@ -6,9 +6,9 @@
  *
  */
 
-/** @var $formName string **/
-/** @var $model \yii\base\Model **/
-/** @var $attribute string **/
+/** @var $formName string * */
+/** @var $model \yii\base\Model * */
+/** @var $attribute string * */
 
 \humhub\modules\devtools\assets\GiiAsset::register($this);
 
@@ -477,10 +477,8 @@ $faIcons = [
     'fa-sort-amount-desc' => '&#xf161',
     'fa-sort-asc' => '&#xf0de',
     'fa-sort-desc' => '&#xf0dd',
-    'fa-sort-down-alias' => '&#xf0dd',
     'fa-sort-numeric-asc' => '&#xf162',
     'fa-sort-numeric-desc' => '&#xf163',
-    'fa-sort-up-alias' => '&#xf0de',
     'fa-soundcloud' => '&#xf1be',
     'fa-space-shuttle' => '&#xf197',
     'fa-spinner' => '&#xf110',
@@ -511,7 +509,7 @@ $faIcons = [
     'fa-suitcase' => '&#xf0f2',
     'fa-sun-o' => '&#xf185',
     'fa-superscript' => '&#xf12b',
-    'fa-support-alias' => '&#xf1cd',
+    'fa-support' => '&#xf1cd',
     'fa-table' => '&#xf0ce',
     'fa-tablet' => '&#xf10a',
     'fa-tachometer' => '&#xf0e4',
@@ -599,13 +597,13 @@ $faIcons = [
 ?>
 
 <div class="form-group">
-    <label class="control-label" for="<?= $formName ?>"><?= $model->getAttributeLabel($attribute)?></label>
+    <label class="control-label" for="<?= $formName ?>"><?= $model->getAttributeLabel($attribute) ?></label>
 
     <select class='selectpicker form-control' name="<?= $formName ?>">
         <?php foreach ($faIcons as $name => $value): ?>
 
             <option class="" value="<?= $name; ?>" <?php if ($model->icon == $name): ?>selected='selected'<?php endif; ?>>
-                <?= (substr($name, 0, 2) == 'fa') ?  substr($name, 3) : $name ?>
+                <?= (substr($name, 0, 2) == 'fa') ? substr($name, 3) : $name ?>
             </option>
 
         <?php endforeach; ?>
@@ -613,12 +611,12 @@ $faIcons = [
 </div>
 
 <script>
-    var formatState = function(state) {
+    var formatState = function (state) {
         if (!state.id) {
             return state.text;
         }
 
-        return $('<span><i class="fa '+state.element.value+'"></i> ' + state.text + '</span>');
+        return $('<span><i class="fa ' + state.element.value + '"></i> ' + state.text + '</span>');
     };
 
     $(".selectpicker").select2({

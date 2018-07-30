@@ -1,11 +1,13 @@
 <?php
 
+use humhub\modules\devtools\Events;
+use humhub\widgets\TopMenu;
+
 return [
     'id' => 'devtools',
     'class' => 'humhub\modules\devtools\Module',
     'namespace' => 'humhub\modules\devtools',
     'events' => [
-        ['class' => \humhub\widgets\TopMenu::className(), 'event' => \humhub\widgets\TopMenu::EVENT_INIT, 'callback' => ['humhub\modules\devtools\Events', 'onTopMenuInit']],
+        ['class' => TopMenu::class, 'event' => TopMenu::EVENT_INIT, 'callback' => [Events::class, 'onTopMenuInit']],
     ],
 ];
-?>

@@ -3,7 +3,6 @@
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
- *
  */
 
 namespace humhub\modules\devtools\controllers;
@@ -35,7 +34,7 @@ class RichtextController extends Controller
     {
         $model = new RichtextModel();
 
-        if($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())) {
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext),
@@ -54,7 +53,7 @@ class RichtextController extends Controller
     {
         $model = new RichtextModel();
 
-        if($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())) {
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext, ['preset' => 'markdown']),
@@ -73,7 +72,7 @@ class RichtextController extends Controller
     {
         $model = new RichtextModel();
 
-        if($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())) {
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext, ['preset' => 'demo']),
@@ -92,7 +91,7 @@ class RichtextController extends Controller
     {
         $model = new RichtextModel();
 
-        if($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())) {
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext, ['exclude' => ['emoji', 'mention', 'table']]),
@@ -106,7 +105,4 @@ class RichtextController extends Controller
             'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
         ]);
     }
-
 }
-
-?>

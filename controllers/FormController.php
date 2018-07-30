@@ -3,7 +3,6 @@
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
  * @license https://www.humhub.com/licences
- *
  */
 
 namespace humhub\modules\devtools\controllers;
@@ -35,12 +34,10 @@ class FormController extends Controller
     {
         $model = new TestModel();
 
-        if($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())) {
             return $this->renderAjax('result', ['model' => $model]);
         }
 
         return ModalClose::widget(['error', 'Could not load form data!']);
     }
 }
-
-?>

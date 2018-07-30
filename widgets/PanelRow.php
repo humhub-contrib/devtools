@@ -16,5 +16,3 @@ class PanelRow extends \yii\base\Widget
         ]);
     }
 }
-
-?>
