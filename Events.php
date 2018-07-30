@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
 
 namespace humhub\modules\devtools;
 
@@ -7,9 +12,8 @@ use yii\helpers\Url;
 
 class Events
 {
-
     public static function onTopMenuInit($event)
-    {        
+    {
         $event->sender->addItem([
             'label' => Yii::t('DevtoolsModule.base', 'Devtools'),
             'id' => 'devtools',
@@ -19,5 +23,4 @@ class Events
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'devtools'),
         ]);
     }
-
 }

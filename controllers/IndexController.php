@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
 
 namespace humhub\modules\devtools\controllers;
 
@@ -18,7 +23,7 @@ class IndexController extends \humhub\components\Controller
             ['admin']
         ];
     }
-    
+
     public $subLayout = "@devtools/views/index/_layout";
 
     /**
@@ -28,7 +33,4 @@ class IndexController extends \humhub\components\Controller
     {
         return $this->render('index');
     }
-
 }
-
-?>

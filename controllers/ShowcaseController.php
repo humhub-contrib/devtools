@@ -1,4 +1,9 @@
 <?php
+/**
+ * @link https://www.humhub.org/
+ * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
+ * @license https://www.humhub.com/licences
+ */
 
 namespace humhub\modules\devtools\controllers;
 
@@ -52,17 +57,15 @@ class ShowcaseController extends \humhub\components\Controller
     public function actionUserpickerRemote()
     {
         $this->forcePostRequest();
-        
+
         $model = new \humhub\modules\devtools\models\forms\UserpickerForm();
-        
+
         if ($model->load(Yii::$app->request->post())) {
             return ModalDialog::widget([
-                    'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Userpicker</strong> guid selection'),
-                    'body' => $model->getSelectionString(),
-                    'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Userpicker</strong> guid selection'),
+                'body' => $model->getSelectionString(),
+                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
             ]);
         }
     }
 }
-
-?>

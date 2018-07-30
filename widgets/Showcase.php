@@ -24,5 +24,3 @@ class Showcase extends \yii\base\Widget
         ]);
     }
 }
-
-?>

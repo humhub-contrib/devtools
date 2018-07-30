@@ -24,5 +24,3 @@ class CodeView extends \yii\base\Widget
         return \humhub\widgets\MarkdownView::widget(['markdown' => $codeblock]);
     }
 }
-
-?>

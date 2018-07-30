@@ -14,5 +14,3 @@ class ShowcaseTabContent extends \yii\base\Widget
         return $this->renderFile($path);
     }
 }
-
-?>
