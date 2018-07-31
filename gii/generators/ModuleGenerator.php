@@ -8,6 +8,7 @@
 
 namespace humhub\modules\devtools\gii\generators;
 
+use yii\base\InvalidArgumentException;
 use yii\gii\CodeFile;
 use Yii;
 use yii\helpers\Url;
@@ -80,8 +81,28 @@ class ModuleGenerator extends \yii\gii\Generator
             [['moduleID', 'namespace', 'outputPath'], 'required'],
             [['isSpaceModule', 'isUserModule'], 'boolean'],
             [['contentContainerName', 'contentContainerDescription', 'icon'], 'string'],
-            [['moduleID'], 'match', 'pattern' => '/^[\w\\-]+$/', 'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only word characters and dashes are allowed e.g.: \'myModule\'.')],
-            [['namespace'], 'match', 'pattern' => '/^[a-zA-Z0-9\\\]+\\\$/', 'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only letters, numbers and backslashes are allowed, the namespace has to end with a backslash!. e.g. \'myCompany\' or \'myCompany\\social\'.')],
+            [
+                ['moduleID'],
+                'match',
+                'pattern' => '/^[\w\\-]+$/',
+                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only word characters and dashes are allowed e.g.: \'myModule\'.')
+            ],
+            [
+                ['namespace'],
+                'match',
+                'pattern' => '/^[a-zA-Z0-9\\\]+\\\$/',
+                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only letters, numbers and backslashes are allowed, the namespace has to end with a backslash. e.g. \'myCompany\\\' or \'myCompany\\social\\\'.')
+            ],
+            [
+                ['outputPath'],
+                function ($attribute, $params, $validator) {
+                    try {
+                        Yii::getAlias($this->$attribute);
+                    } catch (InvalidArgumentException $e) {
+                        $this->addError($attribute, Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Could not resolve output path.'));
+                    }
+                }
+            ],
         ]);
     }
 
