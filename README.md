@@ -9,6 +9,13 @@ The enhanced HumHub module class provides additional features like:
 - Dynamic module management (enable / disable / install / uninstall) via administration interface
 - Usable as Space or User Profile module
 
+## Installation (for dummies)
+```
+cd /path/to/your/humhub/protected/humhub/modules
+git clone https://github.com/humhub/humhub-modules-devtools.git devtools
+```
+On the web go to Administration->Modules and you will see the devtools module. Enable it :)
+
 ## Quick start with HumHub Module Generator
 You can use the HumHub module generator to quickly create a basic module for you to build on top of.
 
