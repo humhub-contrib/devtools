@@ -18,7 +18,7 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin() ?>
 
-<?= $form->field(new RichtextModel(), 'richtext')->widget(RichtextField::class, [
+<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class, [
         'id' => 'markdown_richtext',
         'preset' => 'markdown'
 ]) ?>

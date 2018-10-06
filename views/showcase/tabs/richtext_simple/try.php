@@ -16,7 +16,7 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin() ?>
 
-<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\widgets\RichtextField::class) ?>
+<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class) ?>
 
 <br>
 

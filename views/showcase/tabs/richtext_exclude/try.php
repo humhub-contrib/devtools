@@ -7,9 +7,7 @@
  */
 
 use humhub\modules\devtools\models\forms\RichtextModel;
-use humhub\widgets\Button;
 use humhub\widgets\ModalButton;
-use humhub\widgets\RichtextField;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
@@ -18,7 +16,7 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin() ?>
 
-<?= $form->field(new RichtextModel(), 'richtext')->widget(RichtextField::class, [
+<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class, [
         'id' => 'markdown_exclude',
         'exclude' => ['emoji', 'mention', 'table']
 ]) ?>

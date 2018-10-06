@@ -4,9 +4,9 @@
 
 <?= CodeView::PHP_START ?> $form = ActiveForm::begin() ?>
 
-    <?= CodeView::PHP_START_ECHO ?> $form->field(new RichtextExampleModel(), 'richtext')->widget(\humhub\widgets\RichtextField::class, [
+    <?= CodeView::PHP_START_ECHO ?> $form->field(new RichtextExampleModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class, [
         'id' => 'markdown_richtext',
-        'preset' => 'markdown'
+        'exclude' => ['emoji', 'mention', 'table']
     ]) ?>
 
     <br>

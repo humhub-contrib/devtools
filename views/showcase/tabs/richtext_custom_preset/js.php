@@ -38,6 +38,7 @@ humhub.module('demo.richtext.preset', function (module, require, $) {
                 {
                     id: 'markUnderline',
                     mark: 'underline',
+                    group: 'marks',
                     item: richtext.api.menu.markItem(options.schema.marks.underline, {
                         title: "Toggle underline",
                         icon: {

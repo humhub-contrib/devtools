@@ -51,6 +51,7 @@ use yii\helpers\Url;
                     {
                         id: 'markUnderline',
                         mark: 'underline',
+                        group: 'marks',
                         item: richtext.api.menu.markItem(options.schema.marks.underline, {
                             title: "Toggle underline",
                             icon: {
@@ -77,7 +78,7 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin() ?>
 
-<?= $form->field(new RichtextModel(), 'richtext')->widget(RichtextField::class, [
+<?= $form->field(new RichtextModel(), 'richtext')->widget(humhub\modules\content\widgets\richtext\RichTextField::class, [
         'id' => 'custom_richtext',
         'preset' => 'demo'
 ]) ?>
