@@ -12,7 +12,7 @@
     
     <div id="demo-progress" style="display:none;margin-top:5px;"></div>
     
-    <?= \humhub\modules\file\widgets\UploadPreview::widget([
+    <?= \humhub\modules\file\widgets\FilePreview::widget([
         'id' => 'demo-preview',
         'options' => [
             'style' => 'margin:10px'
