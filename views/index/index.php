@@ -51,7 +51,7 @@ use yii\helpers\Url;
             PanelRow::widget([
                 'items' => [
                     ['title' => Yii::t('DevtoolsModule.views_index_index', 'Client'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'client']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the ajax client module to submit forms or request other data.')],
-                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Upload'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'upload']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom ui components.')],
+                    ['disabled' => false, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Upload'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'upload']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom ui components.')],
                     ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Actions'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'actions']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript action api.')]
                 ]
             ]);

@@ -1,7 +1,34 @@
-<?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'html']); ?>
+<?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'php']); ?>
 
-<button class="btn btn-default" id="remote-modal-send" 
-        data-action-click="demo.modal.confirm.needsConfirmation"
-        data-action-block="none"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <?= Yii::t('DevtoolsModule.views_showcase_tabs_modal_confirm_try', 'Needs to be confirmed!') ?></button>
+<?=
+<<<HTML
+    
+<form>
+    <?= \humhub\modules\file\widgets\UploadButton::widget([
+        'id' => 'demo-file-upload',
+        'max' => 2,
+        'dropZone' => '#demo-drop-zone',
+        'preview' => '#demo-preview',
+        'progress' => '#demo-progress',
+        'buttonOptions' => [
+            'style' => 'position: relative;overflow: hidden;'
+        ]
+    ])?>
+    
+      <?= \humhub\modules\file\widgets\UploadProgress::widget(['id' => 'demo-progress'])?>
+    
+<?= \humhub\modules\file\widgets\FilePreview::widget([
+    'id' => 'demo-preview',
+    'options' => [
+        'style' => 'margin:10px'
+    ]]) ?>
 
+    <div id="demo-drop-zone" style="height:100px;border:1px solid #ededed">
+        <h1>DropZone</h1>
+    </div>
+</form>
+
+HTML;
+
+?>
 <?php humhub\modules\devtools\widgets\CodeView::end();

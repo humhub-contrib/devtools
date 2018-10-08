@@ -9,27 +9,32 @@
             'style' => 'position: relative;overflow: hidden;'
         ]
     ])?>
+
+    <?= \humhub\modules\file\widgets\UploadProgress::widget(['id' => 'demo-progress'])?>
     
-    <div id="demo-progress" style="display:none;margin-top:5px;"></div>
-    
-    <?= \humhub\modules\file\widgets\UploadPreview::widget([
+    <?= \humhub\modules\file\widgets\FilePreview::widget([
         'id' => 'demo-preview',
         'options' => [
             'style' => 'margin:10px'
         ]]) ?>
+
+    <br><br>
     
     <div id="demo-drop-zone" style="height:100px;border:1px solid #ededed">
         <h1>DropZone</h1>
     </div>
 </form>
 
-<script>
-    $(document).on('humhub:ready', function() {
-        var string = humhub.require('util').string;
-    
-        console.log(string.template('test {this.a} asdf {nnn}', {'this' : {a : 'hallo'}}));
-    });
-</script>
+    <br><br>
+
+<div class="alert alert-info">
+    <?= Yii::t('DevtoolsModule.base', '<strong>Note:</strong> Uploaded files have to be attached to an ActiveRecord, otherwise they will be cleaned by the cronjob.')?>
+    <?= Yii::t('DevtoolsModule.base', 'The upload component will add inputs with the relaed file guid to the surrounding form, by default with the name \'fileList[]\'.')?>
+    <br><br>
+    <?= Yii::t('DevtoolsModule.base', 'You can attach uploaded files to your model as follows:')?>
+    <br><br>
+    <code>$message->fileManager->attach(Yii::$app->request->post('fileList'));</code>
+</div>
 
 <?php 
 /**
