@@ -18,15 +18,8 @@ use Yii;
  * @package humhub.modules.birthday.controllers
  * @author Sebastian Stumpf
  */
-class ShowcaseController extends \humhub\components\Controller
+class ShowcaseController extends DevtoolsController
 {
-    public function getAccessRules()
-    {
-        return [
-            ['admin']
-        ];
-    }
-
     public $subLayout = "@humhub/modules/devtools/views/index/_layout";
 
     /**

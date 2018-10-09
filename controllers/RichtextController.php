@@ -19,15 +19,8 @@ use Yii;
  * @package humhub.modules.birthday.controllers
  * @author Sebastian Stumpf
  */
-class RichtextController extends Controller
+class RichtextController extends DevtoolsController
 {
-    public function getAccessRules()
-    {
-        return [
-            ['admin']
-        ];
-    }
-
     public $subLayout = "@humhub/modules/devtools/views/index/_layout";
 
     public function actionModal()

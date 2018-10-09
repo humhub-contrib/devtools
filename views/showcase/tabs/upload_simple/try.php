@@ -2,7 +2,7 @@
     <?= \humhub\modules\file\widgets\UploadButton::widget([
         'id' => 'demo-file-upload',
         'max' => 2,
-        'dropZone' => '#demo-drop-zone',
+        'dropZone' => '#demo-drop-zone_old',
         'preview' => '#demo-preview',
         'progress' => '#demo-progress',
         'buttonOptions' => [
@@ -20,7 +20,7 @@
 
     <br><br>
     
-    <div id="demo-drop-zone" style="height:100px;border:1px solid #ededed">
+    <div id="demo-drop-zone_old" class="alert alert-info">
         <h1>DropZone</h1>
     </div>
 </form>
@@ -35,22 +35,3 @@
     <br><br>
     <code>$message->fileManager->attach(Yii::$app->request->post('fileList'));</code>
 </div>
-
-<?php 
-/**
- * 
- * UploadButton::widget
- * UploadProgress::widget
- * UploadPreview::widget
- * 
- * Model attachment
- * 
- * => FilePreview with model attachment
- * 
- * use data-ui-init='[{a.b,c.d}]'
- * 
- * use templates instead of inline js
- * 
- * UploadFormField::widget => combination of all three
- */
-?>

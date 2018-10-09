@@ -12,15 +12,8 @@ use Yii;
 use humhub\components\Controller;
 use yii\helpers\Url;
 
-class StatusController extends Controller
+class StatusController extends DevtoolsController
 {
-    public function getAccessRules()
-    {
-        return [
-            ['admin']
-        ];
-    }
-
     const TYPE_SUCCESS = 'success';
     const TYPE_WARNING = 'warning';
     const TYPE_ERROR = 'error';

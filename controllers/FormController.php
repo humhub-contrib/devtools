@@ -21,15 +21,8 @@ use Yii;
  * @package humhub.modules.birthday.controllers
  * @author Sebastian Stumpf
  */
-class FormController extends Controller
+class FormController extends DevtoolsController
 {
-    public function getAccessRules()
-    {
-        return [
-            ['admin']
-        ];
-    }
-
     public function actionIndex()
     {
         $model = new TestModel();

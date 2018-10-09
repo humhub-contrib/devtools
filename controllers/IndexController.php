@@ -15,15 +15,8 @@ use Yii;
  * @package humhub.modules.birthday.controllers
  * @author Sebastian Stumpf
  */
-class IndexController extends \humhub\components\Controller
+class IndexController extends DevtoolsController
 {
-    public function getAccessRules()
-    {
-        return [
-            ['admin']
-        ];
-    }
-
     public $subLayout = "@devtools/views/index/_layout";
 
     /**

@@ -19,15 +19,8 @@ use Yii;
  * @package humhub.modules.birthday.controllers
  * @author Sebastian Stumpf
  */
-class ClientController extends Controller
+class ClientController extends DevtoolsController
 {
-    public function getAccessRules()
-    {
-        return [
-            ['admin']
-        ];
-    }
-
     public function actionHtml()
     {
         return $this->renderAjax('index', [
