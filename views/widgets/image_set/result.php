@@ -29,7 +29,7 @@ use humhub\widgets\ModalDialog;
             'linkOptions' => ! empty($model->linkOptions) ? $model->prepareOptions('linkOptions') : [],
             'showTooltip' => $model->tooltip,
             'imageOptions' => ! empty($model->imageOptions) ? $model->prepareOptions('imageOptions') : [],
-            'hiddenImageWidth' => ! empty($model->hiddenImageWidth) ? $model->hiddenImageWidth : 50,
+            'hiddenImageWidth' => ! empty($model->hiddenImageWidth) ? $model->hiddenImageWidth : 24,
             'hiddenImageHeight' => ! empty($model->hiddenImageHeight) ? $model->hiddenImageHeight : null,
         ]); ?>
     </div>

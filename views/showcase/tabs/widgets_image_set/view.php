@@ -18,7 +18,7 @@ use \humhub\modules\ui\widgets\ContainerImageSet;
         'linkOptions' => ['class' => 'pull-left'], //Default []
         'showTooltip' => true, // Default false
         'imageOptions' => ['class' => 'img-rounded tt img_margin'], //Default []
-        'hiddenImageWidth' => 25, // Default 50
+        'hiddenImageWidth' => 24, // Default 24
         'hiddenImageWidth' => null // Default null
         ]);
     ?>

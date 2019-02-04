@@ -90,7 +90,7 @@ class ContainerImageSetModel extends \yii\base\Model
             'tooltip' => 'Show tooltip with further information about the space or the user (Only available when link is true).',
             'imageOptions' => 'Optional html options for the image tag.',
             'acronymCount' => 'Number of characters used in the acronym (for spaces only).',
-            'hiddenImageWidth' => 'The width of the hidden image in pixels. Default 50px.',
+            'hiddenImageWidth' => 'The width of the hidden image in pixels. Default 24px.',
             'hiddenImageHeight' => 'The height of the hidden image in pixels. Equals to width if empty.',
         ];
     }
