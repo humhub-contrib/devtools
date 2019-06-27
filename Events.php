@@ -23,4 +23,10 @@ class Events
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'devtools'),
         ]);
     }
+
+    public static function onConsoleApplicationInit($event)
+    {
+        $application = $event->sender;
+        $application->controllerMap['dummy'] = commands\DummyController::class;
+    }
 }
