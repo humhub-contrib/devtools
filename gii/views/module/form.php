@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://www.humhub.org/
  * @copyright Copyright (c) 2017 HumHub GmbH & Co. KG
@@ -17,7 +18,8 @@ use humhub\modules\devtools\widgets\IconSelect;
 <?php \humhub\modules\devtools\assets\GiiAsset::register($this) ?>
 
 <div class="module-form">
-    <?= $form->field($generator, 'namespace'); ?>
+
+    <?= $form->field($generator, 'namespace')->textInput(['class' => 'form-control class-content-namespace', 'placeholder' => 'Namespace', 'disabled' => true]); ?>
     <?= $form->field($generator, 'moduleID'); ?>
 
     <div class="alert alert-warning">
@@ -55,7 +57,6 @@ use humhub\modules\devtools\widgets\IconSelect;
             $(showClass).show();
         }
     };
-
 
     displayIf('.isContainerModule', '.ifCotnainerModule');
     displayIf('.isAddContainerPermission', '.ifAddContainerPermission');
