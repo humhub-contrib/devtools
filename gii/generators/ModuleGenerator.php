@@ -18,8 +18,8 @@ use yii\helpers\Url;
  */
 class ModuleGenerator extends \yii\gii\Generator
 {
-    public $namespace = "myCompany\\";
-    public $moduleID = "example";
+    public $namespace = 'humhub\\';
+    public $moduleID = 'example';
 
     public $icon;
 
@@ -91,7 +91,7 @@ class ModuleGenerator extends \yii\gii\Generator
                 ['namespace'],
                 'match',
                 'pattern' => '/^[a-zA-Z0-9\\\]+\\\$/',
-                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only letters, numbers and backslashes are allowed, the namespace has to end with a backslash. e.g. \'myCompany\\\' or \'myCompany\\social\\\'.')
+                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'The namespace is preset to \'humhub\\\' so that your module will work out of the box.')
             ],
             [
                 ['outputPath'],
@@ -128,7 +128,7 @@ class ModuleGenerator extends \yii\gii\Generator
         return [
             'moduleID' =>  Yii::t('DevtoolsModule.generators_ModuleGenerator', 'This refers to the ID of the module, e.g. <code>myApp</code>. The id is used within your class namespaces as well as the Module configuration.'),
             'outputPath' =>  Yii::t('DevtoolsModule.generators_ModuleGenerator', 'The temporary location of the generated files.'),
-            'namespace' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'The namespace prefix is used for all your module classes e.g., <code>myCompany</code> or <code>myCompany\\intranet</code>.'),
+            'namespace' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'The namespace prefix is used for all your module classes e.g., <code>humhub\\modules\\intranet</code>.'),
             'isUserModule' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'This module should be installable on a user profile.'),
             'isSpaceModule' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'This module should be installable on space level.'),
             'contentContainerName' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'This name will be shown in the module overview of Spaces and User Profiles'),
@@ -260,7 +260,7 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public function getClassNamespace($suffix = null)
     {
-        $namespace = $this->namespace . 'humhub\\modules\\' . $this->moduleID;
+        $namespace = $this->namespace . 'modules\\' . $this->moduleID;
         return ($suffix) ? $namespace . '\\' . $suffix : $namespace;
     }
 
