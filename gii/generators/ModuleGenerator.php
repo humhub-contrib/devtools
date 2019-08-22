@@ -18,6 +18,8 @@ use yii\helpers\Url;
  */
 class ModuleGenerator extends \yii\gii\Generator
 {
+    const NS_DASH_REPLACEMENT = '';
+
     public $namespace = "myCompany\\";
     public $moduleID = "example";
 
@@ -240,8 +242,9 @@ class ModuleGenerator extends \yii\gii\Generator
 
     public function translate($text, $view = false, $paramsStr = null)
     {
+        $idParts = array_map(function ($i) { return ucfirst($i); }, preg_split('![_-]!', $this->moduleID));
         $result = ($view) ? '<?= ' : '';
-        $result .= 'Yii::t(\'' . ucfirst($this->moduleID) . 'Module.base\', \'' . $text . '\'';
+        $result .= 'Yii::t(\'' . join('', $idParts) . 'Module.base\', \'' . $text . '\'';
         $result .= ($paramsStr) ? ', ' . $paramsStr : '';
         $result .= ')';
         return $view ? $result . ' ?>' : $result;
@@ -260,7 +263,7 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public function getClassNamespace($suffix = null)
     {
-        $namespace = $this->namespace . 'humhub\\modules\\' . $this->moduleID;
+        $namespace = $this->namespace . 'humhub\\modules\\' . str_replace('-', self::NS_DASH_REPLACEMENT, $this->moduleID);
         return ($suffix) ? $namespace . '\\' . $suffix : $namespace;
     }
 
