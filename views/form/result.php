@@ -13,7 +13,7 @@ use humhub\widgets\RichText;
 use yii\widgets\DetailView;
 use humhub\modules\user\widgets\Image as UserImage;
 
-/* @var $this \humhub\components\View */
+/* @var $this \humhub\modules\ui\view\components\View */
 /* @var $model TestModel */
 ?>
 

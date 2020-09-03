@@ -11,7 +11,7 @@ use humhub\widgets\Button;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
-/* @var $this \humhub\components\View */
+/* @var $this \humhub\modules\ui\view\components\View */
 ?>
 
 <?php $form = ActiveForm::begin() ?>
