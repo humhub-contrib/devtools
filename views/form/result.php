@@ -9,7 +9,7 @@
 use humhub\widgets\ModalButton;
 use humhub\widgets\ModalDialog;
 use humhub\modules\devtools\models\TestModel;
-use humhub\widgets\RichText;
+use humhub\modules\content\widgets\richtext\RichText;
 use yii\widgets\DetailView;
 use humhub\modules\user\widgets\Image as UserImage;
 
@@ -29,7 +29,7 @@ use humhub\modules\user\widgets\Image as UserImage;
                     'contentOptions' => ['data-ui-markdown' => true],
                     'value' => function ($model) {
                         /* @var $model TestModel */
-                        return RichText::widget(['text' => $model->richtext]);
+                        return RichText::output($model->richtext);
                     }
                 ],
                 [
