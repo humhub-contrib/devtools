@@ -13,6 +13,8 @@ use yii\web\AssetBundle;
 class DevtoolsAsset extends AssetBundle
 {
 
+    public $defer = true;
+
     public $publishOptions = [
         'forceCopy' => false
     ];

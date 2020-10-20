@@ -72,7 +72,7 @@ use yii\helpers\Url;
                 'items' => [
                     ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Config'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'config']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript configuration to transfer data from php to your Javascript modules.')],
                     ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Text'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'text']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Lean how to use the text utility to transfer translated text to your Javascript modules.')],
-                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Log'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'log']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Javascript log module.')]
+                    ['disabled' => false, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Stream'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'stream']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to create custom stream and use stream filter.')]
                 ]
             ]);
             ?>

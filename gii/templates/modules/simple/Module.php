@@ -48,7 +48,7 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
     public function disableContentContainer(ContentContainerActiveRecord $container)
     {
         // Clean up space related data, don't remove the parent::disable()!!!
-        parent::disable();
+        parent::disableContentContainer($container);
     }
 
     /**

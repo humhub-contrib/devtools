@@ -49,7 +49,7 @@ class ModuleClassHelper extends Component
 
     public function getSuperClass()
     {
-        return $this->root->isContentContainerModule() ? '\humhub\modules\content\components\ContentContainerModule' : '\humhub\components\Module';
+        return $this->root->isContentContainerModule() ? 'humhub\modules\content\components\ContentContainerModule' : 'humhub\components\Module';
     }
 
 }

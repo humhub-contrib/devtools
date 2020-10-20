@@ -48,12 +48,12 @@
     background-color:#E8E8E8;
 }
 
-.devpanel-body div.section.disabled a {
+.devpanel-body div.section.disabled {
     color: #e0e0e0;
 }
 
 .showcase .tab-sub-menu {
-    margin-bottom: 0px !important;
+    margin-bottom: 0 !important;
 }
 
 .showcase-page .panel-body.tab {

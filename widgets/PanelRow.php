@@ -12,7 +12,7 @@ class PanelRow extends \yii\base\Widget
     public function run()
     {
         return $this->render('panelRow', [
-                    'items' => $this->items,
+            'items' => $this->items,
         ]);
     }
 }

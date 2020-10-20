@@ -27,12 +27,18 @@ use humhub\modules\devtools\widgets\IconSelect;
     <?= IconSelect::widget(['model' => $generator, 'attribute' => 'icon'])?>
 
     <hr>
-    <?= $form->field($generator, 'isSpaceModule')->checkbox(['class' => 'isContainerModule']); ?>
-    <?= $form->field($generator, 'isUserModule')->checkbox(['class' => 'isContainerModule']); ?>
+
+
+    <div class="form-group">
+        <label class="control-label"><?=  Yii::t('DevtoolsModule.views_generators_module_form', 'Is this module installable on container level?')?></label>
+        <br><br>
+        <?= $form->field($generator, 'isSpaceModule')->checkbox(['class' => 'isContainerModule']) ?>
+        <?= $form->field($generator, 'isUserModule')->checkbox(['class' => 'isContainerModule']) ?>
+    </div>
 
     <div class="ifCotnainerModule">
-        <?= $form->field($generator, 'contentContainerName'); ?>
-        <?= $form->field($generator, 'contentContainerDescription'); ?>
+        <?= $form->field($generator, 'contentContainerName') ?>
+        <?= $form->field($generator, 'contentContainerDescription') ?>
     </div>
 
     <hr>

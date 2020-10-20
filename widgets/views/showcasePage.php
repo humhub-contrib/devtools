@@ -15,8 +15,6 @@ DevtoolsAsset::register($this);
         <?= Yii::t('DevtoolsModule.base', '<strong>Developer</strong> Tools'); ?>
     </div>
 
-
-
     <div class="panel-body">
         <div class="clearfix">
             <?= Button::back(Url::to(['/devtools/index'])) ?>
