@@ -18,8 +18,8 @@ use yii\helpers\Url;
  */
 class ModuleGenerator extends \yii\gii\Generator
 {
-    public $namespace = "myCompany\\";
-    public $moduleID = "example";
+    public $namespace = 'myCompany\\humhub\\modules\\';
+    public $moduleID = 'example';
 
     public $icon;
 
@@ -29,7 +29,7 @@ class ModuleGenerator extends \yii\gii\Generator
 
     public $contentContainerDescription = 'Short description of the modules purpose.';
 
-    public $outputPath = "@devtools/result";
+    public $outputPath = '@devtools/result';
 
     /**
      * @var ModuleClassHelper
@@ -260,7 +260,7 @@ class ModuleGenerator extends \yii\gii\Generator
      */
     public function getClassNamespace($suffix = null)
     {
-        $namespace = $this->namespace . 'humhub\\modules\\' . $this->moduleID;
+        $namespace = $this->namespace . $this->moduleID;
         return ($suffix) ? $namespace . '\\' . $suffix : $namespace;
     }
 
