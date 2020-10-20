@@ -8,6 +8,8 @@
 
 namespace humhub\modules\devtools\gii;
 
+use Yii;
+
 class Module extends \yii\gii\Module
 {
     public function init()
@@ -15,6 +17,8 @@ class Module extends \yii\gii\Module
         parent::init();
         $moduleClass = new \ReflectionClass(\yii\gii\Module::class);
         $this->setBasePath(dirname($moduleClass->getFileName()));
+        Yii::$app->view->registerCss('body {padding: 0 !important}');
+        Yii::$app->view->registerCss('html {font-size: 14px !important}');
     }
 
     protected function coreGenerators()
