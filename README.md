@@ -29,14 +29,11 @@ Add the following to your web configuration (/protected/config/web.php) to enabl
 
 ```php
 return [
-    // ...
     'modules' => [
-        // ...
         'gii' => [
             'class' => 'humhub\modules\devtools\gii\Module',
             'allowedIPs' => ['127.0.0.1', '::1'],
         ],
-        // ...
     ]
 ];
 ```
@@ -47,9 +44,7 @@ return [
 
 ```php
 return [
-    // ...
     'modules' => [
-        // ...
         'gii' => [
             'class' => 'yii\gii\Module',
             'allowedIPs' => ['127.0.0.1', '::1'],
@@ -59,7 +54,6 @@ return [
                 ]
             ],
         ],
-        // ...
     ]
 ];
 ```
@@ -156,4 +150,11 @@ This file holds basic information about the module like name, description or cur
     "minVersion": "0.20"
     }
 }
+```
+
+## PHPDA
+
+```
+"dot.exe" -T "svg" "C:\Users\buddha\AppData\Local\Temp\gra28D0.tmp" -o "C:\Users\buddha\AppData\Local\Temp\gra8A71.tmp.svg"
+.\vendor\bin\phpda.bat analyze phpda.yml
 ```
