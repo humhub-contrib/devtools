@@ -9,6 +9,7 @@
 namespace humhub\modules\devtools\gii;
 
 use Yii;
+use yii\gii\controllers\DefaultController;
 
 class Module extends \yii\gii\Module
 {
@@ -17,8 +18,16 @@ class Module extends \yii\gii\Module
         parent::init();
         $moduleClass = new \ReflectionClass(\yii\gii\Module::class);
         $this->setBasePath(dirname($moduleClass->getFileName()));
-        Yii::$app->view->registerCss('body {padding: 0 !important}');
-        Yii::$app->view->registerCss('html {font-size: 14px !important}');
+    }
+
+    public function beforeAction($action)
+    {
+        if(Yii::$app->controller instanceof DefaultController) {
+            Yii::$app->view->registerCss('body {padding: 0 !important}');
+            Yii::$app->view->registerCss('html {font-size: 14px !important}');
+        }
+
+        return parent::beforeAction($action);
     }
 
     protected function coreGenerators()
