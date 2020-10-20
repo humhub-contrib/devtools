@@ -13,6 +13,7 @@ use humhub\modules\dashboard\components\actions\DashboardStreamAction;
 use humhub\modules\devtools\stream\OwnContentStreamFilter;
 use humhub\modules\devtools\widgets\ContentInfoWallStreamEntryWidget;
 use humhub\modules\devtools\widgets\SimpleJsWidget;
+use humhub\modules\post\models\Post;
 
 /**
  * Defines the configure actions.
@@ -28,6 +29,7 @@ class StreamController extends DevtoolsController
             'stream' => [
                 'class' => DashboardStreamAction::class,
                 'filterHandlers' => [OwnContentStreamFilter::class],
+                'includes' => [Post::class],
                 'streamEntryOptions' => (new WallStreamEntryOptions)->overwriteWidgetClass(ContentInfoWallStreamEntryWidget::class)
             ],
         ];
