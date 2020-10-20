@@ -2,8 +2,8 @@
 
 use humhub\widgets\ModalButton;
 use yii\bootstrap\ActiveForm;
-use humhub\widgets\RichtextField;
-use \humhub\modules\user\widgets\UserPickerField;
+use humhub\modules\content\widgets\richtext\RichTextField;
+use humhub\modules\user\widgets\UserPickerField;
 
 
 if(!isset($model)) {
@@ -16,7 +16,7 @@ if(!isset($model)) {
 
 <?php $form = ActiveForm::begin();?>
     <?= $form->field($model, 'text');?>
-    <?= $form->field($model, 'richtext')->widget(RichtextField::class);?>
+    <?= $form->field($model, 'richtext')->widget(RichTextField::class);?>
     <?= $form->field($model, 'user')->widget(UserPickerField::class);?>
     <?= $form->field($model, 'selection')->dropDownList($model->getOptions());?>
     <?= ModalButton::submitModal(['/devtools/form'],Yii::t('base', 'Submit')) ?>

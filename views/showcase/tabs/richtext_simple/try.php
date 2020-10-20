@@ -16,7 +16,7 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin() ?>
 
-<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class) ?>
+<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class, ['options' => ['readonly' => 'readonly']]) ?>
 
 <br>
 

@@ -9,7 +9,7 @@
 use humhub\modules\devtools\models\forms\RichtextModel;
 use humhub\widgets\Button;
 use humhub\widgets\ModalButton;
-use humhub\widgets\RichtextField;
+use humhub\modules\content\widgets\richtext\RichTextField;
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
 
@@ -18,7 +18,7 @@ use yii\helpers\Url;
 
 <?php $form = ActiveForm::begin() ?>
 
-<?= $form->field(new RichtextModel(), 'richtext')->widget(\humhub\modules\content\widgets\richtext\RichTextField::class, [
+<?= $form->field(new RichtextModel(), 'richtext')->widget(RichTextField::class, [
         'id' => 'markdown_richtext',
         'preset' => 'markdown'
 ]) ?>
