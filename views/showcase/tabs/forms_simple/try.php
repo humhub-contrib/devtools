@@ -1,7 +1,7 @@
 <?php
 
 use humhub\widgets\ModalButton;
-use yii\bootstrap\ActiveForm;
+use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\modules\content\widgets\richtext\RichTextField;
 use humhub\modules\user\widgets\UserPickerField;
 

@@ -17,6 +17,16 @@ $showcases = [
             ['id' => 'php', 'title' => Yii::t('DevtoolsModule.base', 'PHP')],
         ]
     ],
+    [
+        'id' => 'forms_acknowledge',
+        'title' => Yii::t('DevtoolsModule.views_showcase_forms', 'Acknowledge page unload for unsaved date'),
+        'description' => Yii::t('DevtoolsModule.views_showcase_forms', 'The acknowledge active form feature will warn users when unloading a form has unsaved data.'),
+        'tabs' => [
+            ['id' => 'try', 'active' => true, 'title' => Yii::t('DevtoolsModule.base', 'Try')],
+            ['id' => 'view', 'title' => Yii::t('DevtoolsModule.base', 'View')],
+            ['id' => 'php', 'title' => Yii::t('DevtoolsModule.base', 'PHP')],
+        ]
+    ],
 ];
 ?>
 
