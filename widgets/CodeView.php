@@ -2,9 +2,10 @@
 
 namespace humhub\modules\devtools\widgets;
 
+use yii\helpers\Markdown;
+
 class CodeView extends \yii\base\Widget
 {
-
     public $type = '';
 
     const PHP_START = '<?php';
@@ -21,6 +22,6 @@ class CodeView extends \yii\base\Widget
     {
         $content = ob_get_clean();
         $codeblock = '```'.$this->type.$content.'```';
-        return \humhub\widgets\MarkdownView::widget(['markdown' => $codeblock]);
+        return Markdown::process($codeblock);
     }
 }
