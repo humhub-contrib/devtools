@@ -3,7 +3,7 @@
     "name": "HumHub Developer Tools",
     "description": "",
     "keywords": ["gii", "tools", "development"],
-    "version": "0.3",
+    "version": "0.4.1",
     "humhub": {
         "minVersion": "1.2.2"
     }
