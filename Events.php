@@ -14,6 +14,10 @@ class Events
 {
     public static function onTopMenuInit($event)
     {
+        if (Yii::$app->user->isGuest) {
+            return true;
+        }
+
         $event->sender->addItem([
             'label' => Yii::t('DevtoolsModule.base', 'Devtools'),
             'id' => 'devtools',
