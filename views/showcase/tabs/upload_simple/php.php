@@ -23,7 +23,7 @@
         'style' => 'margin:10px'
     ]]) ?>
 
-    <div id="demo-drop-zone" style="height:100px;border:1px solid #ededed">
+    <div id="demo-drop-zone" style="height:100px;border:1px solid var(--background-color-page)">
         <h1>DropZone</h1>
     </div>
 </form>

@@ -4,6 +4,7 @@ Changelog
 0.4.1 (unreleased)
 ---------------------
 - Fix #27: Replace missing Markdown Widget
+- Enh #29: Replace theme variables with CSS variables
 
 0.4.0
 ---------------------
