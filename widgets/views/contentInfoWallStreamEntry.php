@@ -1,11 +1,11 @@
 <?php
-/* @var $this \humhub\modules\ui\view\components\View */
-/* @var $model \humhub\modules\content\components\ContentActiveRecord */
-
 use humhub\libs\Html;
-use humhub\modules\content\widgets\VisibilityIcon; ?>
+use humhub\modules\content\components\ContentActiveRecord;
+use humhub\modules\content\widgets\VisibilityIcon;
 
-<div style="border:1px solid <?= $this->theme->variable('info'); ?>;margin:10px;padding:10px;">
+/* @var $model ContentActiveRecord */
+?>
+<div style="border:1px solid var(--info);margin:10px;padding:10px;">
     <b>Content id:</b> <?= $model->content->id ?><br>
     <b>Content name:</b> <?= $model->getContentName() ?> <?= VisibilityIcon::getByModel($model) ?><br>
     <b>Created at:</b> <?=  Yii::$app->formatter->asDatetime($model->content->created_at) ?><br>
