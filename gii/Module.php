@@ -22,7 +22,7 @@ class Module extends \yii\gii\Module
 
     public function beforeAction($action)
     {
-        if(Yii::$app->controller instanceof DefaultController) {
+        if (Yii::$app->controller instanceof DefaultController) {
             Yii::$app->view->registerCss('body {padding: 0 !important}');
             Yii::$app->view->registerCss('html {font-size: 14px !important}');
         }

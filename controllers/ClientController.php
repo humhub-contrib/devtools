@@ -24,7 +24,7 @@ class ClientController extends DevtoolsController
     public function actionHtml()
     {
         return $this->renderAjax('index', [
-            'post' => null
+            'post' => null,
         ]);
     }
 
@@ -32,7 +32,7 @@ class ClientController extends DevtoolsController
     {
         $this->forcePostRequest();
         return $this->asJson([
-            'result' => $this->renderAjax('index', ['post' => Yii::$app->request->post('content')])
+            'result' => $this->renderAjax('index', ['post' => Yii::$app->request->post('content')]),
         ]);
     }
 }

@@ -18,7 +18,7 @@ use yii\helpers\Url;
  */
 class ModuleGenerator extends \yii\gii\Generator
 {
-    const NS_DASH_REPLACEMENT = '';
+    public const NS_DASH_REPLACEMENT = '';
 
     public $namespace = 'myCompany\\humhub\\modules\\';
     public $moduleID = 'example';
@@ -87,13 +87,13 @@ class ModuleGenerator extends \yii\gii\Generator
                 ['moduleID'],
                 'match',
                 'pattern' => '/^[\w\\-]+$/',
-                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only word characters and dashes are allowed e.g.: \'myModule\'.')
+                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only word characters and dashes are allowed e.g.: \'myModule\'.'),
             ],
             [
                 ['namespace'],
                 'match',
                 'pattern' => '/^[a-zA-Z0-9\\\]+\\\$/',
-                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only letters, numbers and backslashes are allowed, the namespace has to end with a backslash. e.g. \'myCompany\\\' or \'myCompany\\social\\\'.')
+                'message' => Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Only letters, numbers and backslashes are allowed, the namespace has to end with a backslash. e.g. \'myCompany\\\' or \'myCompany\\social\\\'.'),
             ],
             [
                 ['outputPath'],
@@ -103,7 +103,7 @@ class ModuleGenerator extends \yii\gii\Generator
                     } catch (InvalidArgumentException $e) {
                         $this->addError($attribute, Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Could not resolve output path.'));
                     }
-                }
+                },
             ],
         ]);
     }
@@ -171,7 +171,7 @@ class ModuleGenerator extends \yii\gii\Generator
     public function stickyAttributes()
     {
         return array_merge(parent::stickyAttributes(), [
-            'namespace', 'outputPath'
+            'namespace', 'outputPath',
         ]);
     }
 
@@ -184,57 +184,57 @@ class ModuleGenerator extends \yii\gii\Generator
 
         $files[] = new CodeFile(
             $this->getOutputPath('config.php'),
-            $this->render('config.php')
+            $this->render('config.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('module.json'),
-            $this->render('module.json.php')
+            $this->render('module.json.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('Module.php'),
-            $this->render('Module.php')
+            $this->render('Module.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('Events.php'),
-            $this->render('Events.php')
+            $this->render('Events.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('controllers/AdminController.php'),
-            $this->render('controllers/AdminController.php')
+            $this->render('controllers/AdminController.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('controllers/IndexController.php'),
-            $this->render('controllers/IndexController.php')
+            $this->render('controllers/IndexController.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('views/admin/index.php'),
-            $this->render('views/admin/index.php')
+            $this->render('views/admin/index.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('views/index/index.php'),
-            $this->render('views/index/index.php')
+            $this->render('views/index/index.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('views/layouts/default.php'),
-            $this->render('views/layouts/default.php')
+            $this->render('views/layouts/default.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('assets/Assets.php'),
-            $this->render('assets/Assets.php')
+            $this->render('assets/Assets.php'),
         );
 
         $files[] = new CodeFile(
             $this->getOutputPath('resources/js/humhub.' . $this->moduleID . '.js'),
-            $this->render('resources/js/demo.js.php')
+            $this->render('resources/js/demo.js.php'),
         );
 
         return $files;
@@ -251,7 +251,7 @@ class ModuleGenerator extends \yii\gii\Generator
     }
 
     /**
-     * @return boolean the directory that contains the module class
+     * @return bool the directory that contains the module class
      */
     public function getOutputPath($file = '')
     {

@@ -1,8 +1,6 @@
 <?php
 
-
 namespace humhub\modules\devtools\widgets;
-
 
 use Yii;
 use humhub\widgets\Reloadable;
@@ -21,13 +19,13 @@ class SimpleJsWidget extends JsWidget implements Reloadable
         $timestampContainer = Html::tag('div', '', ['class' => 'timestamp']);
         $button = Button::primary()->cssClass('toggleButton')->action('toggle')->loader(false);
         $reloadButton = Button::primary(Yii::t('DevtoolsModule.views_showcase_jswidget', 'Reload'))->cssClass('reloadButton')->action('reload')->loader(false);
-        return Html::tag('div',$timestampContainer.'<br>'.$button.' '.$reloadButton,  $this->getOptions());
+        return Html::tag('div', $timestampContainer . '<br>' . $button . ' ' . $reloadButton, $this->getOptions());
     }
 
     public function getAttributes()
     {
         return [
-            'class' => 'alert alert-info'
+            'class' => 'alert alert-info',
         ];
     }
 
