@@ -22,7 +22,7 @@ class GiiAsset extends AssetBundle
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 
     public $css = [
-        'css/select2.css'
+        'css/select2.css',
     ];
 
     public $depends = [BootstrapAsset::class, JqueryAsset::class, Select2Asset::class, FontAwesomeAsset::class];

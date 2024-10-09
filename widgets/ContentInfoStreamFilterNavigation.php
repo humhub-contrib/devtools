@@ -6,12 +6,17 @@ use humhub\modules\ui\filter\widgets\FilterNavigation;
 
 class ContentInfoStreamFilterNavigation extends FilterNavigation
 {
+    protected function initFilterPanels()
+    {
+    }
 
-    protected function initFilterPanels(){}
+    protected function initFilterBlocks()
+    {
+    }
 
-    protected function initFilterBlocks(){}
-
-    protected function initFilters(){}
+    protected function initFilters()
+    {
+    }
 
     /**
      * @inheritDoc
@@ -19,7 +24,7 @@ class ContentInfoStreamFilterNavigation extends FilterNavigation
     public function getAttributes()
     {
         return [
-            'style' => 'padding-left:15px'
+            'style' => 'padding-left:15px',
         ];
     }
 }

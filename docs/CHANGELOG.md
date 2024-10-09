@@ -5,6 +5,7 @@ Changelog
 ---------------------
 - Fix #27: Replace missing Markdown Widget
 - Enh #29: Replace theme variables with CSS variables
+- Enh #30: Use PHP CS Fixer
 
 0.4.0
 ---------------------

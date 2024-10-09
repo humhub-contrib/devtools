@@ -11,13 +11,11 @@ use yii\base\Exception;
 use yii\httpclient\Client;
 use yii\httpclient\Response;
 
-
 /**
  * Console tools for creating dummy content, users or spaces
  */
 class DummyController extends \yii\console\Controller
 {
-
     /**
      * Create users with data from https://randomuser.me
      *

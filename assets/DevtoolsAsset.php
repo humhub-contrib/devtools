@@ -12,11 +12,10 @@ use yii\web\AssetBundle;
 
 class DevtoolsAsset extends AssetBundle
 {
-
     public $defer = true;
 
     public $publishOptions = [
-        'forceCopy' => false
+        'forceCopy' => false,
     ];
     public $sourcePath = '@devtools/resources';
     public $jsOptions = ['position' => \yii\web\View::POS_END];

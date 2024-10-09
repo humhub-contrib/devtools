@@ -16,7 +16,7 @@ class UploadModel extends \yii\base\Model
     /**
      * @var
      */
-   public $files = [];
+    public $files = [];
     /**
      * @inheritdoc
      */

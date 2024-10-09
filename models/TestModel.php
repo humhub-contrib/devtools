@@ -36,12 +36,13 @@ class TestModel extends \yii\base\Model
     /**
      * @return array
      */
-    public function getOptions() {
+    public function getOptions()
+    {
         return [
             1 => Yii::t('DevtoolsModule.models_TestModel', 'Selection 1'),
             2 => Yii::t('DevtoolsModule.models_TestModel', 'Selection 2'),
             3 => Yii::t('DevtoolsModule.models_TestModel', 'Selection 3'),
-            4 => Yii::t('DevtoolsModule.models_TestModel', 'Selection 4')
+            4 => Yii::t('DevtoolsModule.models_TestModel', 'Selection 4'),
         ];
     }
 
@@ -71,7 +72,7 @@ class TestModel extends \yii\base\Model
 
     public function getUserModels()
     {
-        if(empty($this->user)) {
+        if (empty($this->user)) {
             return [];
         } else {
             return User::find()->active()->andWhere(['in', 'user.guid', $this->user])->all();
@@ -81,7 +82,7 @@ class TestModel extends \yii\base\Model
     public function getSelectionText()
     {
         $options = $this->getOptions();
-        if(isset($options[$this->selection])) {
+        if (isset($options[$this->selection])) {
             return $options[$this->selection];
         }
 

@@ -6,9 +6,8 @@ use Yii;
 
 class PanelRow extends \yii\base\Widget
 {
-
     public $items;
-    
+
     public function run()
     {
         return $this->render('panelRow', [

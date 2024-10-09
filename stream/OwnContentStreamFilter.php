@@ -7,20 +7,20 @@ use Yii;
 
 class OwnContentStreamFilter extends StreamQueryFilter
 {
-    const FILTER_NAME = 'filter_my_content';
+    public const FILTER_NAME = 'filter_my_content';
 
     public $filters = [];
 
     public function rules()
     {
         return [
-            ['filters', 'safe']
+            ['filters', 'safe'],
         ];
     }
 
     public function apply()
     {
-        if($this->filters === static::FILTER_NAME || in_array(static::FILTER_NAME, $this->filters, true)) {
+        if ($this->filters === static::FILTER_NAME || in_array(static::FILTER_NAME, $this->filters, true)) {
             $this->streamQuery->query()->andWhere(['content.created_by' => Yii::$app->user->id]);
         }
     }

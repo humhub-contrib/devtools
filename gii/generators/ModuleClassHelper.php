@@ -8,7 +8,6 @@
 
 namespace humhub\modules\devtools\gii\generators;
 
-
 use yii\base\Component;
 
 class ModuleClassHelper extends Component
@@ -22,18 +21,18 @@ class ModuleClassHelper extends Component
     {
         $result = [
             'Yii',
-            'yii\helpers\Url'
+            'yii\helpers\Url',
         ];
 
-        if($this->root->isContentContainerModule()) {
+        if ($this->root->isContentContainerModule()) {
 
             $result[] = 'humhub\modules\content\components\ContentContainerActiveRecord';
 
-            if($this->root->isSpaceModule) {
+            if ($this->root->isSpaceModule) {
                 $result[] = 'humhub\modules\space\models\Space';
             }
 
-            if($this->root->isUserModule) {
+            if ($this->root->isUserModule) {
                 $result[] = 'humhub\modules\user\models\User';
             }
 

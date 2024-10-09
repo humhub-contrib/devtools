@@ -31,14 +31,14 @@ class RichtextController extends DevtoolsController
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext),
-                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
             ]);
         }
 
         return ModalDialog::widget([
             'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
             'body' => RichText::widget(['text' => 'Richtext could not be loaded']),
-            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
         ]);
     }
 
@@ -50,14 +50,14 @@ class RichtextController extends DevtoolsController
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext, ['preset' => 'markdown']),
-                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
             ]);
         }
 
         return ModalDialog::widget([
             'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
             'body' => RichText::widget(['text' => 'Richtext could not be loaded']),
-            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
         ]);
     }
 
@@ -69,14 +69,14 @@ class RichtextController extends DevtoolsController
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext, ['preset' => 'demo']),
-                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
             ]);
         }
 
         return ModalDialog::widget([
             'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
             'body' => RichText::widget(['text' => 'Richtext could not be loaded']),
-            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
         ]);
     }
 
@@ -88,14 +88,14 @@ class RichtextController extends DevtoolsController
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
                 'body' => RichText::output($model->richtext, ['exclude' => ['emoji', 'mention', 'table']]),
-                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
             ]);
         }
 
         return ModalDialog::widget([
             'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
             'body' => RichText::widget(['text' => 'Richtext could not be loaded']),
-            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
         ]);
     }
 }

@@ -30,7 +30,7 @@ class StreamController extends DevtoolsController
                 'class' => DashboardStreamAction::class,
                 'filterHandlers' => [OwnContentStreamFilter::class],
                 'includes' => [Post::class],
-                'streamEntryOptions' => (new WallStreamEntryOptions)->overwriteWidgetClass(ContentInfoWallStreamEntryWidget::class)
+                'streamEntryOptions' => (new WallStreamEntryOptions())->overwriteWidgetClass(ContentInfoWallStreamEntryWidget::class),
             ],
         ];
     }

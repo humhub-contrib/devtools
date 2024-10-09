@@ -57,7 +57,7 @@ class ShowcaseController extends DevtoolsController
             return ModalDialog::widget([
                 'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Userpicker</strong> guid selection'),
                 'body' => $model->getSelectionString(),
-                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>',
             ]);
         }
     }

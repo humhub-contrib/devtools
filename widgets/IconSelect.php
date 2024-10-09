@@ -19,7 +19,6 @@ use yii\base\Model;
  */
 class IconSelect extends Widget
 {
-
     /**
      * @var Model
      */
@@ -31,7 +30,7 @@ class IconSelect extends Widget
         return $this->render('iconSelect', [
             'model' => $this->model,
             'attribute' => $this->attribute,
-            'formName' => $this->model->formName().'['.$this->attribute.']'
+            'formName' => $this->model->formName() . '[' . $this->attribute . ']',
         ]);
     }
 }

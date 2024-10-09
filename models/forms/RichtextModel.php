@@ -17,7 +17,7 @@ class RichtextModel extends Model
     public function rules()
     {
         return [
-            ['richtext', 'safe']
+            ['richtext', 'safe'],
         ];
     }
 }
