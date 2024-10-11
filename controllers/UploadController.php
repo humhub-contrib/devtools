@@ -17,15 +17,15 @@ class UploadController extends DevtoolsController
     {
         $model = new UploadModel();
 
-        if($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())) {
             return $this->asJson([
-                'success' => true
+                'success' => true,
             ]);
         }
 
         return $this->asJson([
             'success' => false,
-            'error' => Yii::t('DevtoolsModule.base', 'No files selected!')
+            'error' => Yii::t('DevtoolsModule.base', 'No files selected!'),
         ]);
     }
 }

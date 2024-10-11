@@ -8,9 +8,9 @@ class CodeView extends \yii\base\Widget
 {
     public $type = '';
 
-    const PHP_START = '<?php';
-    const PHP_START_ECHO = '<?=';
-    
+    public const PHP_START = '<?php';
+    public const PHP_START_ECHO = '<?=';
+
     public function init()
     {
         parent::init();
@@ -21,7 +21,7 @@ class CodeView extends \yii\base\Widget
     public function run()
     {
         $content = ob_get_clean();
-        $codeblock = '```'.$this->type.$content.'```';
+        $codeblock = '```' . $this->type . $content . '```';
         return Markdown::process($codeblock);
     }
 }

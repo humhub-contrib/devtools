@@ -14,10 +14,10 @@ use yii\helpers\Url;
 
 class StatusController extends DevtoolsController
 {
-    const TYPE_SUCCESS = 'success';
-    const TYPE_WARNING = 'warning';
-    const TYPE_ERROR = 'error';
-    const TYPE_INFO = 'info';
+    public const TYPE_SUCCESS = 'success';
+    public const TYPE_WARNING = 'warning';
+    public const TYPE_ERROR = 'error';
+    public const TYPE_INFO = 'info';
 
     public function actionIndex($type)
     {

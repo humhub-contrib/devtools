@@ -4,7 +4,6 @@ namespace humhub\modules\devtools\widgets;
 
 class ShowcasePage extends \yii\base\Widget
 {
-
     public $items;
 
     public $info;
@@ -13,7 +12,7 @@ class ShowcasePage extends \yii\base\Widget
     {
         return $this->render('showcasePage', [
             'showcases' => $this->items,
-            'info' => $this->info
+            'info' => $this->info,
         ]);
     }
 }
