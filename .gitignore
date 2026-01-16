@@ -4,4 +4,4 @@ nbproject
 vendor/*
 .gitmodules
 /composer.lock
-
+/vendor
