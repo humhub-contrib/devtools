@@ -2,22 +2,22 @@
 
 namespace <?= $generator->getClassNamespace(); ?>;
 
-<?php foreach($generator->moduleClass->getIncludes() as $ns) :?>
+<?php foreach ($generator->moduleClass->getIncludes() as $ns) :?>
 use <?= $ns ?>;<?= "\r\n" ?>
 <?php endforeach; ?>
 
 class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?>{
-<?php if($generator->isContentContainerModule()): ?>
+<?php if ($generator->isContentContainerModule()): ?>
     /**
     * @inheritdoc
     */
     public function getContentContainerTypes()
     {
         return [
-<?php if($generator->isSpaceModule) : ?>
+<?php if ($generator->isSpaceModule) : ?>
             Space::class,
 <?php endif; ?>
-<?php if($generator->isUserModule) : ?>
+<?php if ($generator->isUserModule) : ?>
             User::class
 <?php endif; ?>
         ];
@@ -40,7 +40,7 @@ class Module extends <?= $generator->moduleClass->getSuperClass() ?><?= "\r\n" ?
         // Cleanup all module data, don't remove the parent::disable()!!!
         parent::disable();
     }
-<?php if($generator->isContentContainerModule()) : ?>
+<?php if ($generator->isContentContainerModule()) : ?>
 
     /**
     * @inheritdoc
