@@ -83,10 +83,7 @@ class TestModel extends \yii\base\Model
     public function getSelectionText()
     {
         $options = $this->getOptions();
-        if (isset($options[$this->selection])) {
-            return $options[$this->selection];
-        }
 
-        return '';
+        return $options[$this->selection] ?? '';
     }
 }

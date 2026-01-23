@@ -42,18 +42,12 @@ class StatusController extends DevtoolsController
 
     public function actionModal($type = null)
     {
-        switch ($type) {
-            case self::TYPE_SUCCESS:
-                return ModalClose::widget(['success' => Yii::t('DevtoolsModule.views_showcase_status', 'Success')]);
-                break;
-            case self::TYPE_WARNING:
-                return ModalClose::widget(['warn' => Yii::t('DevtoolsModule.views_showcase_status', 'Warning')]);
-            case self::TYPE_ERROR:
-                return ModalClose::widget(['error' => Yii::t('DevtoolsModule.views_showcase_status', 'Error')]);
-            case self::TYPE_INFO:
-                return ModalClose::widget(['info' => Yii::t('DevtoolsModule.views_showcase_status', 'Info')]);
-        }
-
-        return $this->renderPartial('modal');
+        return match ($type) {
+            self::TYPE_SUCCESS => ModalClose::widget(['success' => Yii::t('DevtoolsModule.views_showcase_status', 'Success')]),
+            self::TYPE_WARNING => ModalClose::widget(['warn' => Yii::t('DevtoolsModule.views_showcase_status', 'Warning')]),
+            self::TYPE_ERROR => ModalClose::widget(['error' => Yii::t('DevtoolsModule.views_showcase_status', 'Error')]),
+            self::TYPE_INFO => ModalClose::widget(['info' => Yii::t('DevtoolsModule.views_showcase_status', 'Info')]),
+            default => $this->renderPartial('modal'),
+        };
     }
 }

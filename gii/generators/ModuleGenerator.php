@@ -98,10 +98,10 @@ class ModuleGenerator extends \yii\gii\Generator
             ],
             [
                 ['outputPath'],
-                function ($attribute, $params, $validator) {
+                function ($attribute, $params, $validator): void {
                     try {
                         Yii::getAlias($this->$attribute);
-                    } catch (InvalidArgumentException $e) {
+                    } catch (InvalidArgumentException) {
                         $this->addError($attribute, Yii::t('DevtoolsModule.generators_ModuleGenerator', 'Could not resolve output path.'));
                     }
                 },
@@ -243,7 +243,7 @@ class ModuleGenerator extends \yii\gii\Generator
 
     public function translate($text, $view = false, $paramsStr = null)
     {
-        $idParts = array_map(function ($i) { return ucfirst($i); }, preg_split('![_-]!', $this->moduleID));
+        $idParts = array_map(fn($i) => ucfirst((string) $i), preg_split('![_-]!', (string) $this->moduleID));
         $result = ($view) ? '<?= ' : '';
         $result .= 'Yii::t(\'' . implode('', $idParts) . 'Module.base\', \'' . $text . '\'';
         $result .= ($paramsStr) ? ', ' . $paramsStr : '';

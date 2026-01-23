@@ -1,6 +1,6 @@
 {
     "id": "<?= $generator->moduleID; ?>",
-    "name": "<?= ucfirst($generator->moduleID); ?>",
+    "name": "<?= ucfirst((string) $generator->moduleID); ?>",
     "description": "An automatically generated HumHub module to help you get started quickly.",
     "keywords": [
     ],

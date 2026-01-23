@@ -603,7 +603,7 @@ $faIcons = [
         <?php foreach ($faIcons as $name => $value): ?>
 
             <option class="" value="<?= $name; ?>" <?php if ($model->icon == $name): ?>selected='selected'<?php endif; ?>>
-                <?= (substr($name, 0, 2) == 'fa') ? substr($name, 3) : $name ?>
+                <?= (str_starts_with($name, 'fa')) ? substr($name, 3) : $name ?>
             </option>
 
         <?php endforeach; ?>
