@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.5.0 (unreleased)
+---------------------
+- Enh #33: Changes for HumHub version 1.18 by rector
+
 0.4.1 (unreleased)
 ---------------------
 - Fix #27: Replace missing Markdown Widget
