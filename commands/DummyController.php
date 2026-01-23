@@ -54,12 +54,12 @@ class DummyController extends \yii\console\Controller
                 print_r($user->getErrors());
                 return;
             } else {
-                $user->profile->firstname = ucfirst($res['name']['first']);
-                $user->profile->lastname = ucfirst($res['name']['last']);
-                $user->profile->city = ucfirst($res['location']['city']);
-                $user->profile->zip = ucfirst($res['location']['postcode']);
-                $user->profile->phone_work = ucfirst($res['phone']);
-                $user->profile->mobile = ucfirst($res['cell']);
+                $user->profile->firstname = ucfirst((string) $res['name']['first']);
+                $user->profile->lastname = ucfirst((string) $res['name']['last']);
+                $user->profile->city = ucfirst((string) $res['location']['city']);
+                $user->profile->zip = ucfirst((string) $res['location']['postcode']);
+                $user->profile->phone_work = ucfirst((string) $res['phone']);
+                $user->profile->mobile = ucfirst((string) $res['cell']);
 
                 if (!$user->profile->save()) {
                     print_r($user->profile->getErrors());
@@ -80,7 +80,7 @@ class DummyController extends \yii\console\Controller
             $filePath = $this->downloadProfileImage($res['picture']['large']);
             $user->getProfileImage()->setNew($filePath);
 
-            $rand = rand(0, count($groups) - 1);
+            $rand = random_int(0, count($groups) - 1);
 
             /** @var Group $group */
             $group = $groups[$rand];
@@ -99,15 +99,15 @@ class DummyController extends \yii\console\Controller
     protected function downloadProfileImage($url)
     {
         $sex = 'm';
-        if (strpos($url, 'women/') !== false) {
+        if (str_contains((string) $url, 'women/')) {
             $sex = 'f';
         }
-        $cacheName = $sex . basename($url);
+        $cacheName = $sex . basename((string) $url);
 
         $dir = Yii::getAlias('@runtime/randomdata/user');
         try {
             FileHelper::createDirectory($dir);
-        } catch (Exception $e) {
+        } catch (Exception) {
             die();
         }
 

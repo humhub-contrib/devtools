@@ -27,10 +27,8 @@ use humhub\modules\user\widgets\Image as UserImage;
                     'attribute' => 'richtext',
                     'format' => 'raw',
                     'contentOptions' => ['data-ui-markdown' => true],
-                    'value' => function ($model) {
-                        /* @var $model TestModel */
-                        return RichText::output($model->richtext);
-                    }
+                    'value' => /* @var $model TestModel */
+                    fn($model) => RichText::output($model->richtext)
                 ],
                 [
                     'attribute' => 'user',
@@ -48,10 +46,8 @@ use humhub\modules\user\widgets\Image as UserImage;
                 ],
                 [
                     'attribute' => 'selection',
-                    'value' => function ($model) {
-                        /* @var $model TestModel */
-                        return $model->getSelectionText();
-                    }
+                    'value' => /* @var $model TestModel */
+                    fn($model) => $model->getSelectionText()
                 ],
             ],
         ]); ?>

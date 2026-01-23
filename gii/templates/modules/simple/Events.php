@@ -15,7 +15,7 @@ class Events
     public static function onTopMenuInit($event)
     {
         $event->sender->addItem([
-            'label' => '<?= ucfirst($generator->moduleID) ?>',
+            'label' => '<?= ucfirst((string) $generator->moduleID) ?>',
             'icon' => '<i class="fa <?= $generator->icon ?>"></i>',
             'url' => Url::to(['/<?= $generator->moduleID ?>/index']),
             'sortOrder' => 99999,
@@ -31,7 +31,7 @@ class Events
     public static function onAdminMenuInit($event)
     {
         $event->sender->addItem([
-            'label' => '<?= ucfirst($generator->moduleID); ?>',
+            'label' => '<?= ucfirst((string) $generator->moduleID); ?>',
             'url' => Url::to(['/<?= $generator->moduleID; ?>/admin']),
             'group' => 'manage',
             'icon' => '<i class="fa <?= $generator->icon ?>"></i>',

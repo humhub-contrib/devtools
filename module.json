@@ -2,9 +2,13 @@
     "id": "devtools",
     "name": "HumHub Developer Tools",
     "description": "",
-    "keywords": ["gii", "tools", "development"],
+    "keywords": [
+        "gii",
+        "tools",
+        "development"
+    ],
     "version": "0.4.1",
     "humhub": {
-        "minVersion": "1.2.2"
+        "minVersion": "1.18"
     }
 }
