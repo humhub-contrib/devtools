@@ -11,8 +11,8 @@ namespace humhub\modules\devtools\assets;
 
 use humhub\assets\FontAwesomeAsset;
 use humhub\assets\Select2Asset;
+use humhub\components\assets\AssetBundle;
 use yii\bootstrap\BootstrapAsset;
-use yii\web\AssetBundle;
 use yii\web\JqueryAsset;
 
 class GiiAsset extends AssetBundle
@@ -26,6 +26,4 @@ class GiiAsset extends AssetBundle
     ];
 
     public $depends = [BootstrapAsset::class, JqueryAsset::class, Select2Asset::class, FontAwesomeAsset::class];
-
-
 }
