@@ -8,15 +8,11 @@
 
 namespace humhub\modules\devtools\assets;
 
-use yii\web\AssetBundle;
+use humhub\components\assets\AssetBundle;
 
 class DevtoolsAsset extends AssetBundle
 {
-    public $defer = true;
-
-    public $publishOptions = [
-        'forceCopy' => false,
-    ];
+    public $forceCopy = false;
     public $sourcePath = '@devtools/resources';
     public $jsOptions = ['position' => \yii\web\View::POS_END];
     public $css = ['css/humhub.devtools.css'];
