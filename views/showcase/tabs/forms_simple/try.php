@@ -1,12 +1,11 @@
 <?php
 
-use humhub\widgets\ModalButton;
-use humhub\modules\ui\form\widgets\ActiveForm;
+use humhub\widgets\form\ActiveForm;
 use humhub\modules\content\widgets\richtext\RichTextField;
 use humhub\modules\user\widgets\UserPickerField;
+use humhub\widgets\modal\ModalButton;
 
-
-if(!isset($model)) {
+if (!isset($model)) {
     $model = new \humhub\modules\devtools\models\TestModel();
 }
 
@@ -19,5 +18,5 @@ if(!isset($model)) {
     <?= $form->field($model, 'richtext')->widget(RichTextField::class);?>
     <?= $form->field($model, 'user')->widget(UserPickerField::class);?>
     <?= $form->field($model, 'selection')->dropDownList($model->getOptions());?>
-    <?= ModalButton::submitModal(['/devtools/form'],Yii::t('base', 'Submit')) ?>
+    <?= ModalButton::save(Yii::t('base', 'Submit'))->submit(['/devtools/form']) ?>
 <?php ActiveForm::end();?>

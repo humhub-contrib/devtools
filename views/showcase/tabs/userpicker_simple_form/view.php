@@ -6,7 +6,7 @@
         'attribute' => 'guids',
         'form' => \$form
     ]);" ?>?>
-    <button data-action-click="ui.modal.submit" data-ui-loader class="btn btn-default">
+    <button data-action-click="ui.modal.submit" data-ui-loader class="btn btn-light">
         <?= Yii::t('DevtoolsModule.views_showcase_tabs_userpicker_simple_try', 'Send')?><?= "\n" ?>
     </button>
 <?= '<?php \yii\widgets\ActiveForm::end() ?>' ?>

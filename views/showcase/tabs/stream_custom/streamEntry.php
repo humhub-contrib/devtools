@@ -1,13 +1,8 @@
 Widget class:
 
-
-<?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'php']);
-
-use humhub\libs\Html;
-use humhub\modules\content\widgets\VisibilityIcon; ?>
+<?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'php']) ?>
 
 namespace humhub\modules\devtools\widgets;
-
 
 use humhub\modules\content\widgets\stream\StreamEntryWidget;
 

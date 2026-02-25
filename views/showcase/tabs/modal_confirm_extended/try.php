@@ -1,7 +1,16 @@
-<button class="btn btn-default" id="remote-modal-send" 
-        data-action-click="demo.modal.confirm.extended.needsConfirmation"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <?= Yii::t('DevtoolsModule.views_showcase_tabs_modal_confirm_try', 'Needs to be confirmed!') ?></button>
+<?php
 
-<script>
+use humhub\helpers\Html;
+use humhub\widgets\bootstrap\Button;
+
+?>
+<?= Button::light(Yii::t('DevtoolsModule.views_showcase_tabs_modal_confirm_try', 'Needs to be confirmed!'))
+    ->id('remote-modal-send')
+    ->action('demo.modal.confirm.extended.needsConfirmation')
+    ->icon('exclamation-triangle')
+    ->loader(false) ?>
+
+<script <?= Html::nonce() ?>>
     humhub.module('demo.modal.confirm.extended', function (module, require, $) {
         var modal = require('ui.modal');
         

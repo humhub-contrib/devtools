@@ -1,15 +1,21 @@
-<?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'php']); ?>
+<?php
+
+use humhub\helpers\Html;
+
+\humhub\modules\devtools\widgets\CodeView::begin(['type' => 'php']);
+
+?>
 
 <?= \humhub\modules\devtools\widgets\CodeView::PHP_START ?>
 
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 use yii\helpers\Url;
 ?>
 <div id="test-client-simple" data-url=" <?= \humhub\modules\devtools\widgets\CodeView::PHP_START_ECHO ?>  Url::to(['/devtools/client/html'])?>"></div>
 
 <?= \humhub\modules\devtools\widgets\CodeView::PHP_START_ECHO ?> Button::primary(Yii::t('DevtoolsModule.base', 'Load'))->action('demo.client.simple.load')->loader(false) ?>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.client.simple', function (module, require, $) {
         var client = require('client');
         var loader = require('ui.loader');

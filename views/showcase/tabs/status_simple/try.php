@@ -1,18 +1,19 @@
 <?php
 
-use humhub\widgets\Button;
+use humhub\helpers\Html;
+use humhub\widgets\bootstrap\Button;
 
 ?>
 
 <?= Button::success(Yii::t('DevtoolsModule.views_showcase_status', 'Success'))->action('demo.status.simple.success')->loader(false) ?>
 
-<?= Button::info(Yii::t('DevtoolsModule.views_showcase_status', 'Info'))->action('demo.status.simple.info')->loader(false) ?>
+<?= Button::accent(Yii::t('DevtoolsModule.views_showcase_status', 'Info'))->action('demo.status.simple.info')->loader(false) ?>
 
 <?= Button::warning(Yii::t('DevtoolsModule.views_showcase_status', 'Warning'))->action('demo.status.simple.warn')->loader(false) ?>
 
 <?= Button::danger(Yii::t('DevtoolsModule.views_showcase_status', 'Error'))->action('demo.status.simple.error')->loader(false) ?>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.status.simple', function (module, require, $) {
         var status = require('ui.status');
 

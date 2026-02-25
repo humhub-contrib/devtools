@@ -8,8 +8,10 @@
 
 namespace humhub\modules\devtools;
 
+use humhub\helpers\ControllerHelper;
+use humhub\modules\ui\menu\MenuLink;
+use humhub\widgets\TopMenu;
 use Yii;
-use yii\helpers\Url;
 
 class Events
 {
@@ -19,14 +21,17 @@ class Events
             return true;
         }
 
-        $event->sender->addItem([
+        /* @var TopMenu $menu */
+        $menu = $event->sender;
+
+        $menu->addEntry(new MenuLink([
             'label' => Yii::t('DevtoolsModule.base', 'Devtools'),
             'id' => 'devtools',
-            'icon' => '<i class="fa fa-code"></i>',
-            'url' => Url::toRoute('/devtools/index'),
+            'icon' => 'code',
+            'url' => ['/devtools/index'],
             'sortOrder' => 100,
-            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'devtools'),
-        ]);
+            'isActive' => ControllerHelper::isActivePath('devtools'),
+        ]));
     }
 
     public static function onConsoleApplicationInit($event)

@@ -9,10 +9,10 @@ public function actionUserpickerRemote()
     $model = new \humhub\modules\devtools\models\forms\UserpickerForm();
 
     if ($model->load(Yii::$app->request->post())) {
-        return \humhub\widgets\ModalDialog::widget([
-                'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Userpicker</strong> guid selection'),
+        return \humhub\widgets\modal\Modal::widget([
+                'title' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Userpicker</strong> guid selection'),
                 'body' => $model->getSelectionString(),
-                'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+                'footer' => \humhub\widgets\modal\ModalButton::cancel(Yii::t('base', 'Close')),
         ]);
     }
 }

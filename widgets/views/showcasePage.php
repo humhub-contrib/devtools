@@ -2,12 +2,12 @@
 
 use humhub\modules\devtools\assets\DevtoolsAsset;
 use humhub\modules\devtools\widgets\Showcase;
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 use yii\helpers\Url;
 
 DevtoolsAsset::register($this);
 
-/* @var $showcase array */
+/* @var $showcases array */
 /* @var $info string */
 ?>
 <div class="showcase-page panel panel-default">

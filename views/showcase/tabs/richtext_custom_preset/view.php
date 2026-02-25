@@ -10,7 +10,7 @@
 
     <br>
 
-    <?= CodeView::PHP_START_ECHO ?> \humhub\widgets\ModalButton::submitModal(Url::to(['/devtools/richtext/custom-preset']),  Yii::t('DevtoolsModule.base', 'Submit')) ?>
+    <?= CodeView::PHP_START_ECHO ?> \humhub\widgets\modal\ModalButton::save(Yii::t('DevtoolsModule.base', 'Submit'))->submit(Url::to(['/devtools/richtext/custom-preset'])) ?>
 
 <?= CodeView::PHP_START ?> ActiveForm::end() ?>
 <?php humhub\modules\devtools\widgets\CodeView::end(); ?>

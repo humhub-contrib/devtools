@@ -1,6 +1,6 @@
 <?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'html']); ?>
 
-<button id="remote-loader-button" class="btn btn-default" 
+<button id="remote-loader-button" class="btn btn-light" 
         data-action-click="demo.loader.remote.send" 
         data-action-url="<?= "<?= Url::to(['/devtools/showcase/loader-remote']) ?>" ?>" 
         data-ui-loader><?= Yii::t('DevtoolsModule.views_showcases_loader_button_try', 'Send'); ?>

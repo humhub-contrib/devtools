@@ -1,7 +1,11 @@
 <?php /* @var $generator \humhub\modules\devtools\gii\generators\ModuleGenerator */?><?= "<?php\n"; ?>
 
-namespace  <?= $generator->getClassNamespace() ?>;
+namespace <?= $generator->getClassNamespace() ?>;
 
+use humhub\helpers\ControllerHelper;
+use humhub\modules\admin\widgets\AdminMenu;
+use humhub\modules\ui\menu\MenuLink;
+use humhub\widgets\TopMenu;
 use Yii;
 use yii\helpers\Url;
 
@@ -14,13 +18,16 @@ class Events
      */
     public static function onTopMenuInit($event)
     {
-        $event->sender->addItem([
+        /* @var TopMenu $menu */
+        $menu = $event->sender;
+
+        $menu->addEntry(new MenuLink([
             'label' => '<?= ucfirst((string) $generator->moduleID) ?>',
-            'icon' => '<i class="fa <?= $generator->icon ?>"></i>',
-            'url' => Url::to(['/<?= $generator->moduleID ?>/index']),
+            'icon' => '<?= $generator->icon ?>',
+            'url' => ['/<?= $generator->moduleID ?>/index'],
             'sortOrder' => 99999,
-            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == '<?= $generator->moduleID ?>' && Yii::$app->controller->id == 'index'),
-        ]);
+            'isActive' => ControllerHelper::isActivePath('<?= $generator->moduleID ?>', 'index'),
+        ]));
     }
 
     /**
@@ -30,13 +37,15 @@ class Events
      */
     public static function onAdminMenuInit($event)
     {
-        $event->sender->addItem([
-            'label' => '<?= ucfirst((string) $generator->moduleID); ?>',
-            'url' => Url::to(['/<?= $generator->moduleID; ?>/admin']),
-            'group' => 'manage',
-            'icon' => '<i class="fa <?= $generator->icon ?>"></i>',
-            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == '<?= $generator->moduleID; ?>' && Yii::$app->controller->id == 'admin'),
+        /* @var AdminMenu $menu */
+        $menu = $event->sender;
+
+        $menu->addEntry(new MenuLink([
+            'label' => '<?= ucfirst((string) $generator->moduleID) ?>',
+            'url' => ['/<?= $generator->moduleID; ?>/admin'],
+            'icon' => '<?= $generator->icon ?>',
+            'isActive' => ControllerHelper::isActivePath('<?= $generator->moduleID ?>', 'admin'),
             'sortOrder' => 99999,
-        ]);
+        ]));
     }
 }

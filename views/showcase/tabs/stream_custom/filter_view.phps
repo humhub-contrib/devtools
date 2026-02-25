@@ -1,4 +1,4 @@
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\devtools\stream\OwnContentStreamFilter;
 use humhub\modules\ui\filter\widgets\CheckboxFilterInput;
 use humhub\modules\ui\view\components\View;

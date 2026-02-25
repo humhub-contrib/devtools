@@ -4,6 +4,7 @@ Changelog
 0.5.0 (unreleased)
 ---------------------
 - Enh #33: Changes for HumHub version 1.18 by rector
+- Enh #36: Migration to Bootstrap 5 for HumHub 1.18
 
 0.4.1 (unreleased)
 ---------------------

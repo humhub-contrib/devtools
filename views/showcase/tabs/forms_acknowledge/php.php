@@ -21,19 +21,21 @@ Result View:
 
 <?= \humhub\modules\devtools\widgets\CodeView::PHP_START ?>
 
-use humhub\widgets\ModalButton;
-use humhub\widgets\ModalDialog;
+use humhub\widgets\modal\Modal;
+use humhub\widgets\modal\ModalButton;
 use humhub\modules\devtools\models\TestModel;
 use humhub\modules\content\widgets\richtext\RichText;
 use yii\widgets\DetailView;
 use humhub\modules\user\widgets\Image as UserImage;
 
-/* @var $this \humhub\modules\ui\view\components\View */
+/* @var $this \humhub\components\View */
 /* @var $model TestModel */
 ?>
 
-<?= \humhub\modules\devtools\widgets\CodeView::PHP_START ?> ModalDialog::begin(['header' => Yii::t('DevtoolsModule.views_client_result', 'Result')]); ?>
-<div class="modal-body">
+<?= \humhub\modules\devtools\widgets\CodeView::PHP_START ?> Modal::beginDialog([
+    'title' => Yii::t('DevtoolsModule.views_client_result', 'Result'),
+    'footer' => ModalButton::cancel(Yii::t('base', 'Close')),
+]); ?>
     <?= \humhub\modules\devtools\widgets\CodeView::PHP_START_ECHO ?> DetailView::widget([
         'model' => $model,
         'attributes' => [
@@ -70,9 +72,5 @@ use humhub\modules\user\widgets\Image as UserImage;
             ],
         ],
     ]); ?>
-</div>
-<div class="modal-footer">
-    <?= \humhub\modules\devtools\widgets\CodeView::PHP_START_ECHO ?>ModalButton::cancel(Yii::t('base', 'Close')) ?>
-</div>
-<?= \humhub\modules\devtools\widgets\CodeView::PHP_START ?> ModalDialog::end() ?>
+<?= \humhub\modules\devtools\widgets\CodeView::PHP_START ?> Modal::endDialog() ?>
 <?php humhub\modules\devtools\widgets\CodeView::end();

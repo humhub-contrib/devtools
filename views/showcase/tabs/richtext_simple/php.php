@@ -6,17 +6,17 @@ public function actionRichtextModal()
     $model = new RichtextExampleModel();
 
     if($model->load(Yii::$app->request->post())) {
-        return ModalDialog::widget([
-            'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
+        return \humhub\widgets\modal\Modal::widget([
+            'title' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
             'body' => RichText::widget(['text' => $model->richtext]),
-            'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+            'footer' => \humhub\widgets\modal\ModalButton::cancel(Yii::t('base', 'Close')),
         ]);
     }
 
-    return ModalDialog::widget([
-        'header' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
+    return \humhub\widgets\modal\Modal::widget([
+        'title' => Yii::t('DevtoolsModule.controllers_ShowcaseController', '<strong>Richtext</strong> result'),
         'body' => RichText::widget(['text' => 'Richtext could not be loaded']),
-        'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+        'footer' => \humhub\widgets\modal\ModalButton::cancel(Yii::t('base', 'Close')),
     ]);
 }
 

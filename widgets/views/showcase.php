@@ -14,14 +14,14 @@
     </div>
 
     <?php if (!$disabled) : ?>
-        <div class="devpanel-body" style="display:none;">
+        <div class="devpanel-body d-none">
             <div class="panel-body">
                 <p><?= $description ?></p>
             </div>
             <ul class="nav nav-tabs tab-sub-menu" role="tablist">
                 <?php foreach ($tabs as $tab) : ?>
-                    <li role="presentation" class="<?= isset($tab['active']) && $tab['active'] ? 'active' : '' ?>">
-                        <a href="#<?= $id . '_' . $tab['id'] ?>" aria-controls="home" role="tab" data-toggle="tab"><?= $tab['title'] ?></a>
+                    <li role="presentation" class="nav-item <?= isset($tab['active']) && $tab['active'] ? 'active' : '' ?>">
+                        <a href="#<?= $id . '_' . $tab['id'] ?>" class="nav-link<?= $tab['id'] === 'try' ? ' active' : '' ?>" aria-controls="home" role="tab" data-bs-toggle="tab"><?= $tab['title'] ?></a>
                     </li>
                 <?php endforeach; ?>
             </ul>

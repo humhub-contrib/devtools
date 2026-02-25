@@ -8,8 +8,6 @@
 
 namespace humhub\modules\devtools\controllers;
 
-use Yii;
-
 /**
  * Defines the configure actions.
  *

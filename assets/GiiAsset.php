@@ -12,7 +12,7 @@ namespace humhub\modules\devtools\assets;
 use humhub\assets\FontAwesomeAsset;
 use humhub\assets\Select2Asset;
 use humhub\components\assets\AssetBundle;
-use yii\bootstrap\BootstrapAsset;
+use yii\bootstrap5\BootstrapAsset;
 use yii\web\JqueryAsset;
 
 class GiiAsset extends AssetBundle

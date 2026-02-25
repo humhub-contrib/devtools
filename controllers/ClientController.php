@@ -8,10 +8,6 @@
 
 namespace humhub\modules\devtools\controllers;
 
-use humhub\components\Controller;
-use humhub\modules\devtools\models\forms\RichtextModel;
-use humhub\widgets\ModalDialog;
-use humhub\widgets\RichText;
 use Yii;
 
 /**

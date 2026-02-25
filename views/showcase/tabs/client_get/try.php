@@ -1,17 +1,17 @@
 <?php
 
-use humhub\widgets\Button;
+use humhub\helpers\Html;
+use humhub\widgets\bootstrap\Button;
 use yii\helpers\Url;
 ?>
 <div id="test-client-simple"
      data-url-html="<?= Url::to(['/devtools/client/html'])?>"
      data-url-post="<?= Url::to(['/devtools/client/post'])?>">
-
 </div>
 <?= Button::primary(Yii::t('DevtoolsModule.base', 'Load Html'))->action('demo.client.simple.loadHtml')->loader(false) ?>&nbsp;
 <?= Button::primary(Yii::t('DevtoolsModule.base', 'Post Data'))->action('demo.client.simple.post')->loader(false) ?>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.client.simple', function (module, require, $) {
         var client = require('client');
         var loader = require('ui.loader');

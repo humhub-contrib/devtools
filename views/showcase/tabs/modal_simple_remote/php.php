@@ -1,7 +1,7 @@
 <?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'html']); ?>
 
 
-<button class="btn btn-default" id="remote-modal-send" 
+<button class="btn btn-light" id="remote-modal-send" 
     data-action-click="ui.modal.load" 
     data-action-url="<?= "<?= Url::to(['/devtools/showcase/load-modal']) ?>" ?>"
     data-ui-loader>Send</button>
@@ -11,9 +11,9 @@
 <?php humhub\modules\devtools\widgets\CodeView::begin(['type' => 'php']); ?>
 
 // Modal view returned by server
-echo \humhub\widgets\ModalDialog::widget([
-    'header' => Yii::t('DevtoolsModule.views_showcase_remoteModal', '<strong>This</strong> Modal was loaded asynchronously!'),
+echo \humhub\widgets\modal\Modal::widget([
+    'title' => Yii::t('DevtoolsModule.views_showcase_remoteModal', '<strong>This</strong> Modal was loaded asynchronously!'),
     'body' => 'This is my remote modal body!',
-    'footer' => '<button class="btn btn-default" data-modal-close>Close</button>'
+    'footer' => \humhub\widgets\modal\ModalButton::cancel(Yii::t('base', 'Close')),
 ]);
 <?php humhub\modules\devtools\widgets\CodeView::end();

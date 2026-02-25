@@ -6,6 +6,7 @@
  *
  */
 
+use humhub\helpers\Html;
 use humhub\modules\devtools\widgets\IconSelect;
 
 /* @var $this yii\web\View */
@@ -29,8 +30,8 @@ use humhub\modules\devtools\widgets\IconSelect;
     <hr>
 
 
-    <div class="form-group">
-        <label class="control-label"><?=  Yii::t('DevtoolsModule.views_generators_module_form', 'Is this module installable on container level?')?></label>
+    <div class="mb-3">
+        <label class="form-label"><?=  Yii::t('DevtoolsModule.views_generators_module_form', 'Is this module installable on container level?')?></label>
         <br><br>
         <?= $form->field($generator, 'isSpaceModule')->checkbox(['class' => 'isContainerModule']) ?>
         <?= $form->field($generator, 'isUserModule')->checkbox(['class' => 'isContainerModule']) ?>
@@ -46,7 +47,7 @@ use humhub\modules\devtools\widgets\IconSelect;
     <?= $form->field($generator, 'outputPath'); ?>
 </div>
 
-<script>
+<script <?= Html::nonce() ?>>
     var displayIf = function(checkBoxSelector, showClass) {
         $(checkBoxSelector).on('change', function() {
             displayCheck(checkBoxSelector, showClass);
