@@ -8,12 +8,8 @@
 
 namespace humhub\modules\devtools\controllers;
 
-use humhub\components\Controller;
-use humhub\modules\devtools\models\forms\RichtextModel;
 use humhub\modules\devtools\models\TestModel;
-use humhub\widgets\ModalClose;
-use humhub\widgets\ModalDialog;
-use humhub\widgets\RichText;
+use humhub\widgets\modal\ModalClose;
 use Yii;
 
 /**
@@ -32,6 +28,6 @@ class FormController extends DevtoolsController
             return $this->renderAjax('result', ['model' => $model]);
         }
 
-        return ModalClose::widget(['error', 'Could not load form data!']);
+        return ModalClose::widget(['error' => 'Could not load form data!']);
     }
 }

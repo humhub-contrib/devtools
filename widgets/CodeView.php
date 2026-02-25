@@ -2,9 +2,9 @@
 
 namespace humhub\modules\devtools\widgets;
 
-use yii\helpers\Markdown;
+use yii\base\Widget;
 
-class CodeView extends \yii\base\Widget
+class CodeView extends Widget
 {
     public $type = '';
 
@@ -20,8 +20,8 @@ class CodeView extends \yii\base\Widget
 
     public function run()
     {
-        $content = ob_get_clean();
-        $codeblock = '```' . $this->type . $content . '```';
-        return Markdown::process($codeblock);
+        return '<pre><code class="language-' . $this->type . '">'
+            . htmlspecialchars(trim(ob_get_clean()))
+            . '</code></pre>';
     }
 }

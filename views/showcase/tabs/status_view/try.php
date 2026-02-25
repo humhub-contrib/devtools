@@ -6,7 +6,7 @@
  *
  */
 
-use humhub\widgets\Link;
+use humhub\widgets\bootstrap\Link;
 use yii\helpers\Url;
 
 ?>

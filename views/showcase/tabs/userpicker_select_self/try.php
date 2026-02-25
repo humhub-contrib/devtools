@@ -5,7 +5,7 @@
 ]);
 ?>
 <br />
-<button data-action-click="user.picker.selectSelf" data-action-target="#select-self-picker" class="btn btn-default">
+<button data-action-click="user.picker.selectSelf" data-action-target="#select-self-picker" class="btn btn-light">
     <?= Yii::t('DevtoolsModule.views_showcase_tabs_userpicker_select_self_try', 'Select Yourself'); ?>
 </button>
 

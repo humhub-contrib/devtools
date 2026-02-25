@@ -1,10 +1,15 @@
+<?php
+
+use humhub\helpers\Html;
+
+?>
 <div id="loader-content-container" style="border:1px solid silver;margin-bottom:10px;">
     <p><?= Yii::t('DevtoolsModule.views_showcases_loader_content_try', 'This is my loader content.'); ?></p>
 </div>
-<button class="btn btn-default" id="content-loader-button"><?= Yii::t('DevtoolsModule.views_showcases_loader_content_try', 'Start'); ?></button>
-<button class="btn btn-default" id="content-loader-stop"><?= Yii::t('DevtoolsModule.views_showcases_loader_content_try', 'Stop'); ?></button>
+<button class="btn btn-light" id="content-loader-button"><?= Yii::t('DevtoolsModule.views_showcases_loader_content_try', 'Start'); ?></button>
+<button class="btn btn-light" id="content-loader-stop"><?= Yii::t('DevtoolsModule.views_showcases_loader_content_try', 'Stop'); ?></button>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.loader.content', function (module, require, $) {
         var loader = require('ui.loader');
 

@@ -6,16 +6,17 @@
  *
  */
 
-use humhub\modules\devtools\models\forms\RichtextModel;
-use humhub\widgets\ModalButton;
+use humhub\helpers\Html;
 use humhub\modules\content\widgets\richtext\RichTextField;
-use yii\bootstrap\ActiveForm;
+use humhub\modules\devtools\models\forms\RichtextModel;
+use humhub\widgets\form\ActiveForm;
+use humhub\widgets\modal\ModalButton;
 use yii\helpers\Url;
 
-/* @var $this \humhub\modules\ui\view\components\View */
+/* @var $this \humhub\components\View */
 ?>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.richtext.preset', function (module, require, $) {
         let richtext = require('ui.richtext.prosemirror');
 
@@ -84,7 +85,7 @@ use yii\helpers\Url;
 
 <br>
 
-<?= ModalButton::submitModal(Url::to(['/devtools/richtext/custom-preset']),  Yii::t('DevtoolsModule.base', 'Submit')) ?>
+<?= ModalButton::save(Yii::t('DevtoolsModule.base', 'Submit'))->submit(Url::to(['/devtools/richtext/custom-preset'])) ?>
 
 <?php ActiveForm::end() ?>
 

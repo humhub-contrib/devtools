@@ -3,7 +3,7 @@
 namespace humhub\modules\devtools\controllers;
 
 
-use humhub\widgets\ModalClose;
+use humhub\widgets\modal\ModalClose;
 use Yii;
 use humhub\components\Controller;
 use yii\helpers\Url;

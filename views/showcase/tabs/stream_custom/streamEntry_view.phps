@@ -1,11 +1,8 @@
-use humhub\libs\Html;
-use humhub\modules\content\widgets\VisibilityIcon; ?>
-
 <?php
-/* @var $this \humhub\modules\ui\view\components\View */
+/* @var $this \humhub\components\View */
 /* @var $model \humhub\modules\content\components\ContentActiveRecord */
 
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\content\widgets\VisibilityIcon; ?>
 
 <div style="border:1px solid <?= $this->theme->variable('info'); ?>;margin:10px;padding:10px;">

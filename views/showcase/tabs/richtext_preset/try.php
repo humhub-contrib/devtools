@@ -6,14 +6,13 @@
  *
  */
 
-use humhub\modules\devtools\models\forms\RichtextModel;
-use humhub\widgets\Button;
-use humhub\widgets\ModalButton;
 use humhub\modules\content\widgets\richtext\RichTextField;
-use yii\bootstrap\ActiveForm;
+use humhub\modules\devtools\models\forms\RichtextModel;
+use humhub\widgets\form\ActiveForm;
+use humhub\widgets\modal\ModalButton;
 use yii\helpers\Url;
 
-/* @var $this \humhub\modules\ui\view\components\View */
+/* @var $this \humhub\components\View */
 ?>
 
 <?php $form = ActiveForm::begin() ?>
@@ -21,10 +20,10 @@ use yii\helpers\Url;
 <?= $form->field(new RichtextModel(), 'richtext')->widget(RichTextField::class, [
         'id' => 'markdown_richtext',
         'preset' => 'markdown'
-]) ?>
+    ]) ?>
 
 <br>
 
-<?= ModalButton::submitModal(Url::to(['/devtools/richtext/preset']),  Yii::t('DevtoolsModule.base', 'Submit')) ?>
+<?= ModalButton::save(Yii::t('DevtoolsModule.base', 'Submit'))->submit(Url::to(['/devtools/richtext/preset'])) ?>
 
 <?php ActiveForm::end() ?>

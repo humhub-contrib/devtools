@@ -2,11 +2,11 @@
 
 namespace humhub\modules\devtools\widgets;
 
-use Yii;
-use humhub\widgets\Reloadable;
-use humhub\widgets\Button;
-use humhub\libs\Html;
+use humhub\helpers\Html;
+use humhub\widgets\bootstrap\Button;
 use humhub\widgets\JsWidget;
+use humhub\widgets\Reloadable;
+use Yii;
 
 class SimpleJsWidget extends JsWidget implements Reloadable
 {

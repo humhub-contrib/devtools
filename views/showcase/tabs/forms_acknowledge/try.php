@@ -1,13 +1,12 @@
 <?php
 
-use humhub\widgets\Button;
-use humhub\widgets\ModalButton;
-use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\modules\content\widgets\richtext\RichTextField;
 use humhub\modules\user\widgets\UserPickerField;
+use humhub\widgets\bootstrap\Button;
+use humhub\widgets\form\ActiveForm;
 
 
-if(!isset($model)) {
+if (!isset($model)) {
     $model = new \humhub\modules\devtools\models\TestModel();
 }
 

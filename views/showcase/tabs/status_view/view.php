@@ -12,14 +12,14 @@
 
 <?php
 
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 use yii\helpers\Url;
 
 ?>
 
 <?= Button::success(Yii::t('DevtoolsModule.views_showcase_status', 'Success'))->link(Url::to(['/devtools/status', 'type' => 'success']))->loader(true); ?>
 
-<?= Button::info(Yii::t('DevtoolsModule.views_showcase_status', 'Info'))->link(Url::to(['/devtools/status', 'type' => 'info']))->loader(true); ?>
+<?= Button::accent(Yii::t('DevtoolsModule.views_showcase_status', 'Info'))->link(Url::to(['/devtools/status', 'type' => 'info']))->loader(true); ?>
 
 <?= Button::warning(Yii::t('DevtoolsModule.views_showcase_status', 'Warning'))->link(Url::to(['/devtools/status', 'type' => 'warning']))->loader(true); ?>
 

@@ -6,11 +6,10 @@
  *
  */
 
-use humhub\widgets\Button;
-use humhub\widgets\ModalButton;
+use humhub\widgets\modal\ModalButton;
 use yii\helpers\Url;
 
 ?>
 
-<?= ModalButton::defaultType(Yii::t('DevtoolsModule.views_showcase_status', 'Open Modal'))->load(Url::to(['/devtools/status/modal'])); ?>
+<?= ModalButton::light(Yii::t('DevtoolsModule.views_showcase_status', 'Open Modal'))->load(Url::to(['/devtools/status/modal'])); ?>
 

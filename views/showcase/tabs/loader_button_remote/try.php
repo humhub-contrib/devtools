@@ -1,10 +1,11 @@
 <?php
 
+use humhub\helpers\Html;
 use yii\helpers\Url;
 
 ?>
 
-<button id="remote-loader-button" class="btn btn-default" 
+<button id="remote-loader-button" class="btn btn-light" 
         data-action-click="demo.loader.remote.send" 
         data-action-url="<?= Url::to(['/devtools/showcase/loader-remote']) ?>"
         data-ui-loader>
@@ -12,7 +13,7 @@ use yii\helpers\Url;
 </button>
 <span id="remote-loader-result"></span>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.loader.remote', function (module, require, $) {
         var client = require('client');
 

@@ -8,10 +8,9 @@
 
 namespace humhub\modules\devtools\controllers;
 
-use humhub\widgets\ModalClose;
-use Yii;
-use humhub\components\Controller;
+use humhub\widgets\modal\ModalClose;
 use yii\helpers\Url;
+use Yii;
 
 class StatusController extends DevtoolsController
 {

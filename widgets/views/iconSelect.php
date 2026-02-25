@@ -6,6 +6,8 @@
  *
  */
 
+use humhub\helpers\Html;
+
 /** @var $formName string * */
 /** @var $model \yii\base\Model * */
 /** @var $attribute string * */
@@ -596,8 +598,8 @@ $faIcons = [
 
 ?>
 
-<div class="form-group">
-    <label class="control-label" for="<?= $formName ?>"><?= $model->getAttributeLabel($attribute) ?></label>
+<div class="mb-3">
+    <label class="form-label" for="<?= $formName ?>"><?= $model->getAttributeLabel($attribute) ?></label>
 
     <select class='selectpicker form-control' name="<?= $formName ?>">
         <?php foreach ($faIcons as $name => $value): ?>
@@ -610,7 +612,7 @@ $faIcons = [
     </select>
 </div>
 
-<script>
+<script <?= Html::nonce() ?>>
     var formatState = function (state) {
         if (!state.id) {
             return state.text;

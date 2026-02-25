@@ -1,5 +1,5 @@
 <?php
-use humhub\libs\Html;
+use humhub\helpers\Html;
 use humhub\modules\content\components\ContentActiveRecord;
 use humhub\modules\content\widgets\VisibilityIcon;
 

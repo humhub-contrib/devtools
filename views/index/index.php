@@ -1,7 +1,7 @@
 <?php
 
 use humhub\modules\devtools\widgets\PanelRow;
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 use yii\helpers\Url;
 
 \humhub\modules\devtools\assets\DevtoolsAsset::register($this);
@@ -18,7 +18,7 @@ use yii\helpers\Url;
 
         <?php if(Yii::$app->getModule('gii')) : ?>
             <div class="clearfix">
-                <?= Button::defaultType(Yii::t('DevtoolsModule.base', 'Module Generator'))->link(['/gii'], false)->icon('fa-rocket')->right() ?>
+                <?= Button::light(Yii::t('DevtoolsModule.base', 'Module Generator'))->link(['/gii'], false)->icon('fa-rocket')->right() ?>
             </div>
             <br />
         <?php endif; ?>

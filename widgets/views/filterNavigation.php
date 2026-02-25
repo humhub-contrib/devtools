@@ -1,8 +1,8 @@
 <?php
-use humhub\libs\Html;
+use humhub\components\View;
+use humhub\helpers\Html;
 use humhub\modules\devtools\stream\OwnContentStreamFilter;
 use humhub\modules\ui\filter\widgets\CheckboxFilterInput;
-use humhub\modules\ui\view\components\View;
 
 /* @var $this View */
 /* @var $options []  */

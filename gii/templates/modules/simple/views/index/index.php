@@ -1,6 +1,6 @@
 <?php /* @var $generator \humhub\modules\devtools\gii\generators\ModuleGenerator */?><?= "<?php\n"; ?>
 
-use humhub\widgets\Button;
+use humhub\widgets\bootstrap\Button;
 
 // Register our module assets, this could also be done within the controller
 \<?= $generator->getClassNamespace('assets\Assets::register($this);'); ?><?= "\n" ?>

@@ -1,8 +1,10 @@
 <?php
- use yii\helpers\Url;
- use humhub\widgets\Button;
- use humhub\modules\devtools\models\UploadModel;
- use humhub\modules\file\widgets\Upload;
+
+use humhub\helpers\Html;
+use humhub\modules\devtools\models\UploadModel;
+use humhub\modules\file\widgets\Upload;
+use humhub\widgets\bootstrap\Button;
+use yii\helpers\Url;
 ?>
 
 <form>
@@ -21,7 +23,7 @@
     <?= Button::save(Yii::t('base', 'Submit'))->action('demo.upload.model.submit', Url::toRoute('/devtools/upload/model')); ?>
 </form>
 
-<script>
+<script <?= Html::nonce() ?>>
     humhub.module('demo.upload.model', function(module, require, $) {
         var client = require('client');
         module.submit = function(evt) {
