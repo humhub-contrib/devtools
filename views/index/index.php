@@ -61,7 +61,7 @@ use yii\helpers\Url;
             PanelRow::widget([
                 'items' => [
                     ['title' => Yii::t('DevtoolsModule.views_index_index', 'Forms'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'forms']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to submit form data.')],
-                    ['disabled' => true, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Widgets'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'widgets']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how implement ui widgets.')],
+                    ['disabled' => version_compare(Yii::$app->version, '1.4.dev', '<') ? true : false, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Widgets'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'widgets']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how implement ui widgets.')],
                     ['disabled' => version_compare(Yii::$app->version, '1.3', '<') ? true : false, 'title' => Yii::t('DevtoolsModule.views_index_index', 'Richtext'), 'url' => Url::to(['/devtools/showcase/view', 'id' => 'richtext']), 'text' => Yii::t('DevtoolsModule.views_index_index', 'Learn how to use the Richtext widget and plugin system.')],
                 ]
             ]);
